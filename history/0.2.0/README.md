@@ -1,0 +1,31 @@
+# Rin / Archer — Milestone B
+
+`NOT_SHIPPING_CONTENT` 本地 Vertical Slice，版本 0.2.0。基于已验收的 Milestone A，保留 Dual Contract Core 与 10+10 Starter；新增三件投影武器、Trace、强化投影、ANY targeting、Guard Master、FIELD/Suppression 及中文 QA UI。未进入 Milestone C，未加入 Reward Card、正式素材、UBW 或 Broken Phantasm。
+
+## 试玩
+
+正常启动当前 STS2 v0.107.1，启用已安装的 BaseLib 3.4.7、RitsuLib 0.6.6 兼容包与 RinArcherCore。在主菜单选择「Milestone B 基础契约 QA」或「QA_FIELD_PRESSURE」。选择凛或弓兵开场；双方仍各自有 5 张 Opening Hand。
+
+投影：从干将·莫邪、Rho Aias（开发名）、Hrunting（开发名）中明确选择一件。取消保留原牌与资源。武器进入弓兵当前手牌或后备 Bank，使用后消耗；未使用的 Active 武器结束回合进入弃牌堆。切出后保留原实例，切回不重新生成。
+
+强化投影：下一次成功生成的武器获得强化，可明确选择消费 1 Jewel，使武器本场战斗魔力消耗 -1。Pending 跨回合与切换保留，禁止重复施加。升级只降低本牌能量 1→0。Trace+ 的 -1 魔力只持续当前共享玩家回合，Bank 不能延长它。
+
+强化武器标题显示「强化」：干将·莫邪 6×2 真实 Hit；Rho Aias 给弓兵与凛各 8 Block；Hrunting 为 14 Damage。普通数值分别为 6、弓兵 8 Block、9 Damage。Hrunting 出牌前出现中文 Master/Servant 目标框，可选后备敌方成员，取消不扣资源。
+
+QA 目标标签位于敌方 Intent 附近。上方显示 Pending、Guard 与 FIELD。Guard 和 Suppress 按钮是 QA-only helper，只在明确的 QA 契约中启用，不进入 Deck 或 Reward Pool。
+
+FIELD QA：敌方御主 42 HP、从者 56 HP；循环 12 FRONT → 8 BOTH → 14 MASTER → 御主 +10 Block / 切从者。压制期间 FIELD 仍显示，攻击回到基础 9/5/11，到下一玩家回合恢复。QA FIELD 本场战斗持续；底层也支持有限 duration 在压制中正常推进。
+
+## 构建与检查
+
+工程仍在 `E:\BaiduNetdiskDownload\FSN\milestone-a`。现有 SDK 为 `E:\BaiduNetdiskDownload\FSN\.tools\dotnet\dotnet.exe`，没有安装新依赖。
+
+`RunTests.ps1` 构建并异步运行原生测试：`native-runtime/core-test-results.json` 是 A 的 85 项；`alpha-test-results.json` 是 B 的 58 项。85 个既有断言与原测试文件保留。测试 DLL 只位于隔离 runtime，真实安装不包含测试驱动。
+
+`RunTests.ps1 -NativeQa` 打开隔离图形 QA，随后 `RunMilestoneBQa.ps1 -Phase Arsenal`。强化场景使用 `-Phase Reinforcement`。FIELD 可用 `RunTests.ps1 -NativeQa -Field` 和 `RunMilestoneBQa.ps1 -Phase Field`。同时只运行一个隔离进程。脚本使用正常 GameAction 队列及 QA-only starter fixture；不改真实 Deck、存档或数值。
+
+## 安装与恢复
+
+真实安装目录：`E:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\RinArcherCore`。B 仅更新此目录的 DLL/JSON；BaseLib、RitsuLib、其它 MOD 与真实存档保留。更新备份见 `reports/milestone-b/backup-path.txt`；哈希验证使用 `UpdateLocalB.ps1 -VerifyOnly`。`RestoreMilestoneA.ps1` 在检查当前载荷后可恢复 A 的安装载荷，源码仍保留 B。
+
+最终验收、原生 A–K 场景、telemetry 与限制见 `reports/MILESTONE_B_REPORT.md`。原 A 报告与人工验收记录保留。B 不代表平衡结论、真人全流程试玩、多人网络或最终 Rival UI 验收；本轮停止在 Milestone B。

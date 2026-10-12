@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3]
+[ext_resource type="Script" path="res://scenes/stage.gd" id="Stage"]
+[ext_resource type="PackedScene" path="res://scenes/rin_a.tscn" id="Rin"]
+[ext_resource type="Script" path="res://scenes/fx_layer.gd" id="Fx"]
+[ext_resource type="Shader" path="res://shaders/glow.gdshader" id="Glow"]
+[ext_resource type="Texture2D" path="res://art/FX/gandr-projectile.png" id="BeamArt"]
+[ext_resource type="Texture2D" path="res://art/FX/gandr-impact.png" id="HitArt"]
+[sub_resource type="ShaderMaterial" id="Casting"]
+shader = ExtResource("Glow")
+shader_parameter/strength = 0.0
+[sub_resource type="ShaderMaterial" id="Hit"]
+shader = ExtResource("Glow")
+shader_parameter/strength = 0.0
+[sub_resource type="Animation" id="Cue"]
+resource_name = "gandr"
+length = 0.94
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:action_time")
+tracks/0/keys = {"times": PackedFloat32Array(0,0.94),"transitions": PackedFloat32Array(1,1),"update": 0,"values": [0.0,0.94]}
+[sub_resource type="AnimationLibrary" id="CueLibrary"]
+_data = {&"gandr": SubResource("Cue")}
+[node name="Stage" type="Node2D"]
+script = ExtResource("Stage")
+[node name="Background" type="Node2D" parent="."]
+[node name="GroundShadow" type="Node2D" parent="."]
+script = ExtResource("Fx")
+layer = "Ground"
+[node name="ProjectileTrail" type="Node2D" parent="."]
+script = ExtResource("Fx")
+layer = "Beam"
+[node name="ProjectileArt" type="Sprite2D" parent="ProjectileTrail"]
+texture = ExtResource("BeamArt")
+centered = false
+offset = Vector2(-1980,-381)
+visible = false
+[node name="ReserveOccluder" type="Node2D" parent="."]
+[node name="Rin" parent="." instance=ExtResource("Rin")]
+position = Vector2(480,730)
+scale = Vector2(0.192,0.192)
+[node name="Charge" type="Node2D" parent="."]
+script = ExtResource("Fx")
+layer = "Charge"
+[node name="Impact" type="Node2D" parent="."]
+script = ExtResource("Fx")
+layer = "Impact"
+[node name="ImpactArt" type="Sprite2D" parent="Impact"]
+texture = ExtResource("HitArt")
+centered = false
+offset = Vector2(-540,-686)
+visible = false
+[node name="ForegroundSparks" type="Node2D" parent="."]
+script = ExtResource("Fx")
+layer = "Debris"
+[node name="CastingLight" type="ColorRect" parent="."]
+offset_right = 104.0
+offset_bottom = 104.0
+material = SubResource("Casting")
+mouse_filter = 2
+[node name="HitGlow" type="ColorRect" parent="."]
+offset_left = 1308.0
+offset_top = 580.0
+offset_right = 1488.0
+offset_bottom = 760.0
+material = SubResource("Hit")
+mouse_filter = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {&"": SubResource("CueLibrary")}

@@ -1,0 +1,84 @@
+{
+  "verifiedAt": "2026-10-12",
+  "scope": "FSN compile references; latest candidate dependency readback recorded separately",
+  "gameRelease": {
+    "version": "v0.107.1",
+    "commit": "59260271"
+  },
+  "tutorialCommit": "c3eeb78bba4b13b125e90e8f3bdbfd8dabd1cb5f",
+  "framework": "net9.0",
+  "assemblies": [
+    {
+      "path": "E:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2\\data_sts2_windows_x86_64\\sts2.dll",
+      "name": "sts2",
+      "assemblyVersion": "0.1.0.0",
+      "mvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+      "sha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52"
+    },
+    {
+      "path": "E:\\SteamLibrary\\steamapps\\workshop\\content\\2868840\\3737335127\\BaseLib\\BaseLib.dll",
+      "name": "BaseLib",
+      "assemblyVersion": "3.4.7.0",
+      "mvid": "e1ce449c-88a4-4ba0-bbee-eb1e33f0310b",
+      "sha256": "55863CA6ADC30A61A7544874E157A519FFE148CCF2B18025947609C4BFF813CE"
+    },
+    {
+      "path": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\dependencies\\compat\\0.107.1\\STS2-RitsuLib.dll",
+      "name": "STS2-RitsuLib",
+      "assemblyVersion": "0.6.6.0",
+      "mvid": "e6890442-de04-4548-bea1-28078ff2e26d",
+      "sha256": "9FA12D7A64FC7B24319AA2C8F04298FFA801B23DA63A33A36B9FDC780BB0BFD0"
+    },
+    {
+      "path": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\dependencies\\compat\\0.107.1\\STS2-RitsuLib.Runtime.dll",
+      "name": "STS2-RitsuLib.Runtime",
+      "assemblyVersion": "0.6.6.0",
+      "mvid": "b5b13ba6-bb57-4d8f-8731-601d216d5b1b",
+      "sha256": "F20BD6E333A490CC371B817DD19D2C0F47123D0FD45368CAE61187A89745E755"
+    },
+    {
+      "path": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\dependencies\\shared\\STS2-RitsuLib.Shared.dll",
+      "name": "STS2-RitsuLib.Shared",
+      "assemblyVersion": "0.6.6.0",
+      "mvid": "d0bb9828-b40f-4264-8a84-b924a5bf3fef",
+      "sha256": "F1AFFAD2B107CA26AC661B44AD28235B49964E3C260DD215A09B8C7E1D8443DB"
+    },
+    {
+      "path": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\dependencies\\shared\\STS2-RitsuLib.Ui.dll",
+      "name": "STS2-RitsuLib.Ui",
+      "assemblyVersion": "0.6.6.0",
+      "mvid": "e3bdd48c-100c-4b40-94e9-c9277f5e39f0",
+      "sha256": "450628A164483F1FD122EFAAA7D165784E296654F0A72CC662F96F8FF9A97D29"
+    },
+    {
+      "path": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\dependencies\\shared\\STS2-RitsuLib.Settings.dll",
+      "name": "STS2-RitsuLib.Settings",
+      "assemblyVersion": "0.6.6.0",
+      "mvid": "e40656b8-41f1-458a-bdf7-10306f677d4d",
+      "sha256": "9F35FB1FC52ACFBF0C652C716FD1F66367168063BC372841A8E7EB41E08997C5"
+    },
+    {
+      "path": "E:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2\\data_sts2_windows_x86_64\\0Harmony.dll",
+      "name": "0Harmony",
+      "assemblyVersion": "2.4.2.0",
+      "mvid": "6b813929-656e-4f25-9e34-f25e7084505d",
+      "sha256": "EF1898322C9F5C86DC1B0758B272A9C440823B4A41CA9A0B82A3AA6B3D206387"
+    }
+  ],
+  "verification": "API_VERIFIED metadata; selected method bodies SOURCE_VERIFIED; no new game runtime or human QA",
+  "evidence": "C:\\Users\\Murasame\\Documents\\Codex\\sts2-skill-research-20261012\\assembly-metadata.json",
+  "latestCandidateReadback": {
+    "version": "Public Beta v0.9.3",
+    "runtime": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\workshop-beta-public-release-v0.9.3-20261011-01\\clean-install",
+    "release": {
+      "commit": "59260271",
+      "version": "v0.107.1",
+      "date": "2026-06-18T15:43:56-07:00",
+      "branch": "v0.107.1",
+      "main_assembly_hash": -1555940892
+    },
+    "ritsuManifestVersion": "0.6.6",
+    "all8ReferencedAssembliesMatch": true,
+    "verification": "Read-only file readback on 2026-10-12; no new runtime execution"
+  }
+}

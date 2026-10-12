@@ -1,0 +1,52 @@
+{
+  "status": "SCOPED_ENGINEERING_PASS",
+  "baseline": "0.9.4-vanilla-compat.1",
+  "candidate": "0.9.4-game-compat.1",
+  "tests": {
+    "111": {
+      "game": {
+        "GameVersion": "v0.111.0",
+        "Commit": "41cef1ea",
+        "AssemblySha256": "0861BFA1DF347538D932F22D580E75420F08082792EB914E53B4882764ACDBE9",
+        "AssemblyMvid": "73b63ee0-6c0a-47bb-b0d1-b21f6d94222e"
+      },
+      "payloadSha256": "37F772A454422148C73BFB4D01B80E26278B31272DE5B7950E58FEE959C6A727",
+      "runtimeChecks": 42,
+      "negativeChecks": 21,
+      "result": "runtime-111-graph-dual-02/presentation-results.json"
+    },
+    "107": {
+      "game": {
+        "GameVersion": "v0.107.1",
+        "Commit": "59260271",
+        "AssemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+        "AssemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb"
+      },
+      "payloadSha256": "D2EC45215B8BC6FC2B3D2F64FC36B14FF97117D6D8E44C732FCF7E702F774F36",
+      "runtimeChecks": 42,
+      "negativeChecks": 21,
+      "result": "runtime-107-graph-dual-01/presentation-results.json"
+    }
+  },
+  "totalRuntimeChecks": 84,
+  "totalNegativeChecks": 42,
+  "dependencies": {
+    "BaseLib": "3.4.7",
+    "RitsuLib": "0.6.7",
+    "compatTargets": [
+      "0.107.1",
+      "0.111.0"
+    ]
+  },
+  "unknownBuilds": "REJECTED",
+  "highestVersionFallback": false,
+  "android": "NOT_DEVICE_TESTED",
+  "network": "NOT_TESTED",
+  "physicalController": "NOT_TESTED",
+  "crossVersionRunImport": "NOT_TESTED",
+  "fullRun": "NOT_TESTED",
+  "humanQA": "PENDING",
+  "workshopUploaded": false,
+  "formalInstallModifiedByAgent": false,
+  "originalCandidateUnchanged": true
+}

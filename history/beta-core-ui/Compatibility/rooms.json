@@ -1,0 +1,1980 @@
+{
+  "schemaVersion": 1,
+  "category": "rooms",
+  "gameVersion": "v0.107.1",
+  "gameCommit": "59260271",
+  "matrixRevision": "E1_MATRIX_AMENDMENT_04",
+  "supersedesMatrixSignature": "660F7A7934D38643C80795F772CC1662627E9BDB01B1CF2E75A14696BF5828AD",
+  "countingMethod": "18 enum-domain entries = 9 RoomType + 9 MapPointType; these are not 18 distinct concrete rooms",
+  "concreteRoomModels": [
+    "MegaCrit.Sts2.Core.Rooms.CombatRoom",
+    "MegaCrit.Sts2.Core.Rooms.EventRoom",
+    "MegaCrit.Sts2.Core.Rooms.MapRoom",
+    "MegaCrit.Sts2.Core.Rooms.MerchantRoom",
+    "MegaCrit.Sts2.Core.Rooms.RestSiteRoom",
+    "MegaCrit.Sts2.Core.Rooms.TreasureRoom"
+  ],
+  "combatRoomModes": [
+    {
+      "id": "CombatRoomMode.ActiveCombat",
+      "semantics": "Full interactive combat with hooks"
+    },
+    {
+      "id": "CombatRoomMode.FinishedCombat",
+      "semantics": "Post-combat restore before room exit; no combat hooks"
+    },
+    {
+      "id": "CombatRoomMode.VisualOnly",
+      "semantics": "Combat-layout event preview, not yet an interactive fight"
+    }
+  ],
+  "items": [
+    {
+      "roomTypeId": "MapPointType.Ancient",
+      "domain": "MapPointType",
+      "enumValue": 8,
+      "displayName": "Ancient",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Event"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "AncientEventTransactionAdapter",
+        "EventEligibilityResolver",
+        "RelicEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "AncientEventTransactionAdapter",
+        "EventEligibilityResolver",
+        "RelicEligibilityResolver"
+      ],
+      "saveRisk": [
+        "EVENT_TRANSACTION_COMBAT_STACK_OWNER_RNG"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Ancient map point resolves EventRoom via Act.PullAncient; dynamic relic options/setup and their content eligibility require an Ancient transaction adapter.",
+      "filterReason": null,
+      "notes": "Ancient map point resolves EventRoom via Act.PullAncient; dynamic relic options/setup and their content eligibility require an Ancient transaction adapter.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+          "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+        }
+      ],
+      "implementationSignature": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+            "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_EVENTS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Event",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Boss",
+      "domain": "MapPointType",
+      "enumValue": 7,
+      "displayName": "Boss",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Boss"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [
+        "Shared combat engine only"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "BossTransitionRewardAdapter",
+        "RelicEligibilityResolver",
+        "EventEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "BossTransitionRewardAdapter",
+        "RelicEligibilityResolver",
+        "EventEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Shared combat engine is accepted; boss victory/Act transition/Ancient progression and final endgame event require an explicit room transaction. No Boss-rarity relic pool exists in this build.",
+      "filterReason": null,
+      "notes": "Shared combat engine is accepted; boss victory/Act transition/Ancient progression and final endgame event require an explicit room transaction. No Boss-rarity relic pool exists in this build.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Boss",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "EVENT.THE_ARCHITECT",
+          "dependencyType": "FORCED_EVENT",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "FINAL_ACT_VICTORY_TRANSITION_READINESS",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "State.CurrentActIndex >= State.Acts.Count - 1; existing IsVictoryRoom branch calls WinRun, otherwise EnterRoom(TheArchitect)",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "line": 1230,
+            "code": "await EnterRoom(new EventRoom(ModelDb.Event<TheArchitect>()));"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Elite",
+      "domain": "MapPointType",
+      "enumValue": 6,
+      "displayName": "Elite",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Elite"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [
+        "Shared combat engine only"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "EliteRewardAdapter",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "EliteRewardAdapter",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Shared combat engine is accepted; elite-specific encounters, additional relic ecosystem and reward/save boundary are not a complete tested vanilla elite route.",
+      "filterReason": null,
+      "notes": "Shared combat engine is accepted; elite-specific encounters, additional relic ecosystem and reward/save boundary are not a complete tested vanilla elite route.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Elite",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Monster",
+      "domain": "MapPointType",
+      "enumValue": 5,
+      "displayName": "Normal Combat",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Monster"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "A/B combat",
+        "C Dual Reward",
+        "D1 combat lifecycle",
+        "D1/D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "ContractEffectResolver",
+        "DualRewardModifierResolver",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "ContractEffectResolver",
+        "DualRewardModifierResolver",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "Combat and owner-scoped Dual Reward are accepted A-D1; complete vanilla content/reward modifiers await E2 eligibility and single-budget routing.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Monster",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.RestSite",
+      "domain": "MapPointType",
+      "enumValue": 4,
+      "displayName": "RestSite",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "RestSite"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "D2 Rest Focus",
+        "D2 Smith",
+        "D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "MemberTargetResolver",
+        "DualDeckCardSelector",
+        "RelicEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "MemberTargetResolver",
+        "DualDeckCardSelector",
+        "RelicEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "D2 Rest Focus 30/10 and Smith are accepted; additional relic-provided actions/bonuses need eligibility and one-service budget.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RestSiteRoom.cs",
+          "sha256": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6"
+        }
+      ],
+      "implementationSignature": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RestSiteRoom.cs",
+            "sha256": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.RestSite",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Shop",
+      "domain": "MapPointType",
+      "enumValue": 2,
+      "displayName": "Shop",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Shop"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "D2 Merchant 2+2 card shelf",
+        "D2 Remove",
+        "D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "adapterFamily": [
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "D2 owner-specific 2+2 card shelf and Remove are accepted; vanilla relic/potion shelves and refill content still require compatibility eligibility.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MerchantRoom.cs",
+          "sha256": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733"
+        }
+      ],
+      "implementationSignature": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MerchantRoom.cs",
+            "sha256": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Shop",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Treasure",
+      "domain": "MapPointType",
+      "enumValue": 3,
+      "displayName": "Treasure",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Treasure"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "RelicEligibilityResolver",
+        "ContractEffectResolver"
+      ],
+      "adapterFamily": [
+        "RelicEligibilityResolver",
+        "ContractEffectResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "Single Player shared treasure selection preserves one relic budget; its complete reward ecosystem requires eligibility plus the selected relic scopes.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/TreasureRoom.cs",
+          "sha256": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF"
+        }
+      ],
+      "implementationSignature": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/TreasureRoom.cs",
+            "sha256": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Treasure",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Unassigned",
+      "domain": "MapPointType",
+      "enumValue": 0,
+      "displayName": "Unassigned",
+      "normalRunReachable": true,
+      "reachabilityCondition": "FIRST_RUN_TUTORIAL_OR_TRANSITION_ONLY",
+      "resolvedRoomTypes": [
+        "Event",
+        "Unassigned"
+      ],
+      "classification": "FILTERED_PUBLIC_ALPHA",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [],
+      "adapterFamily": [],
+      "saveRisk": [
+        "FULL_MAP_OR_TRANSITION_LIFECYCLE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "KEEP_FILTERED_FOR_V0_0_0_0_1",
+      "customReason": null,
+      "filterReason": "Sentinel/transitional value has no standalone CreateRoom branch. MapPointType.Unassigned has a first-run tutorial override to Event, which is not an ordinary room.",
+      "notes": "Sentinel/transitional value has no standalone CreateRoom branch. MapPointType.Unassigned has a first-run tutorial override to Event, which is not an ordinary room.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        }
+      ],
+      "implementationSignature": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_EVENTS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Event",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "FIRST_RUN_TUTORIAL_OR_TRANSITION_ONLY",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "RoomType.Unassigned",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "FIRST_RUN_TUTORIAL_OR_TRANSITION_ONLY",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "MapPointType.Unknown",
+      "domain": "MapPointType",
+      "enumValue": 1,
+      "displayName": "Unknown",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Event",
+        "Monster",
+        "Treasure",
+        "Shop",
+        "Elite"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "UnknownMapPointEligibilityAdapter",
+        "EventEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "UnknownMapPointEligibilityAdapter",
+        "EventEligibilityResolver"
+      ],
+      "saveRisk": [
+        "EVENT_TRANSACTION_COMBAT_STACK_OWNER_RNG"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Real UnknownMapPointOdds can resolve Event/Monster/Treasure/Shop; Elite has negative default odds but is in the hook-modifiable candidates. Fixed slice route does not yet validate full map rolling.",
+      "filterReason": null,
+      "notes": "Real UnknownMapPointOdds can resolve Event/Monster/Treasure/Shop; Elite has negative default odds but is in the hook-modifiable candidates. Fixed slice route does not yet validate full map rolling.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+          "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+          "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Odds/UnknownMapPointOdds.cs",
+          "sha256": "BEA015A2AB148950DF9560D8F15A98FC3532B561EDCE90B5C63972BAD824A7AA"
+        }
+      ],
+      "implementationSignature": "BEA015A2AB148950DF9560D8F15A98FC3532B561EDCE90B5C63972BAD824A7AA",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Map/MapPointType.cs",
+            "sha256": "F6FCF29BDB60DB9B5E94A0DEB12CFF89BFD124C63B5FBE087F015D567CF2541C"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+            "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Odds/UnknownMapPointOdds.cs",
+            "sha256": "BEA015A2AB148950DF9560D8F15A98FC3532B561EDCE90B5C63972BAD824A7AA"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_EVENTS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "RoomType.Event",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "RoomType.Monster",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "RoomType.Treasure",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "RoomType.Shop",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        },
+        {
+          "targetId": "RoomType.Elite",
+          "dependencyType": "ROOM_DISPATCH",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "NATIVE_MAP_POINT_BRANCH_BEFORE_ROOM_ENTRY",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "NORMAL_RUN",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "runtimeApi": "RunManager.CreateRoom; native Unknown odds/tutorial conditions preserved"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Boss",
+      "domain": "RoomType",
+      "enumValue": 3,
+      "displayName": "Boss",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Boss"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [
+        "Shared combat engine only"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "BossTransitionRewardAdapter",
+        "RelicEligibilityResolver",
+        "EventEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "BossTransitionRewardAdapter",
+        "RelicEligibilityResolver",
+        "EventEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Shared combat engine is accepted; boss victory/Act transition/Ancient progression and final endgame event require an explicit room transaction. No Boss-rarity relic pool exists in this build.",
+      "filterReason": null,
+      "notes": "Shared combat engine is accepted; boss victory/Act transition/Ancient progression and final endgame event require an explicit room transaction. No Boss-rarity relic pool exists in this build.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "targetId": "EVENT.THE_ARCHITECT",
+          "dependencyType": "FORCED_EVENT",
+          "dependencySemantics": "CONDITIONAL_BRANCH",
+          "gateStage": "FINAL_ACT_VICTORY_TRANSITION_READINESS",
+          "terminalFilteringAllowed": false,
+          "preserveBudget": true,
+          "nativeBranchCondition": "State.CurrentActIndex >= State.Acts.Count - 1; existing IsVictoryRoom branch calls WinRun, otherwise EnterRoom(TheArchitect)",
+          "evidence": {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sourceSha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+            "line": 1230,
+            "code": "await EnterRoom(new EventRoom(ModelDb.Event<TheArchitect>()));"
+          }
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Elite",
+      "domain": "RoomType",
+      "enumValue": 2,
+      "displayName": "Elite",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Elite"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [
+        "Shared combat engine only"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "EliteRewardAdapter",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "EliteRewardAdapter",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "Shared combat engine is accepted; elite-specific encounters, additional relic ecosystem and reward/save boundary are not a complete tested vanilla elite route.",
+      "filterReason": null,
+      "notes": "Shared combat engine is accepted; elite-specific encounters, additional relic ecosystem and reward/save boundary are not a complete tested vanilla elite route.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Event",
+      "domain": "RoomType",
+      "enumValue": 6,
+      "displayName": "Event",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Event"
+      ],
+      "classification": "CUSTOM_ADAPTER",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "EventTransactionAdapter",
+        "EventEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "adapterFamily": [
+        "EventTransactionAdapter",
+        "EventEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "saveRisk": [
+        "EVENT_TRANSACTION_COMBAT_STACK_OWNER_RNG"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_CUSTOM_ADAPTER",
+      "customReason": "EventSynchronizer mutable event state, owner choice, hidden RNG and atomic effects/combat-stack save require event adapters; no complete vanilla event ecosystem is currently accepted.",
+      "filterReason": null,
+      "notes": "EventSynchronizer mutable event state, owner choice, hidden RNG and atomic effects/combat-stack save require event adapters; no complete vanilla event ecosystem is currently accepted.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+          "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+        }
+      ],
+      "implementationSignature": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/EventRoom.cs",
+            "sha256": "089A5A526CF0CAB7C731AFBA385B5EB81F3F08B09B40493E7392F0A8A72DE9A6"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_EVENTS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Map",
+      "domain": "RoomType",
+      "enumValue": 8,
+      "displayName": "Map",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Map"
+      ],
+      "classification": "FILTERED_PUBLIC_ALPHA",
+      "currentSupport": [
+        "Existing slice route only"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [],
+      "adapterFamily": [],
+      "saveRisk": [
+        "FULL_MAP_OR_TRANSITION_LIFECYCLE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "KEEP_FILTERED_FOR_V0_0_0_0_1",
+      "customReason": null,
+      "filterReason": "Full Act map restoration is explicitly out of scope; current accepted slice uses its existing QA/public route only.",
+      "notes": "Full Act map restoration is explicitly out of scope; current accepted slice uses its existing QA/public route only.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MapRoom.cs",
+          "sha256": "F9DF6CDC5387642CB338C717B3BCC0937330770C055F3068AE8C2A22477B836C"
+        }
+      ],
+      "implementationSignature": "F9DF6CDC5387642CB338C717B3BCC0937330770C055F3068AE8C2A22477B836C",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MapRoom.cs",
+            "sha256": "F9DF6CDC5387642CB338C717B3BCC0937330770C055F3068AE8C2A22477B836C"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": []
+    },
+    {
+      "roomTypeId": "RoomType.Monster",
+      "domain": "RoomType",
+      "enumValue": 1,
+      "displayName": "Normal Combat",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Monster"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "A/B combat",
+        "C Dual Reward",
+        "D1 combat lifecycle",
+        "D1/D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "ContractEffectResolver",
+        "DualRewardModifierResolver",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "ContractEffectResolver",
+        "DualRewardModifierResolver",
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "Combat and owner-scoped Dual Reward are accepted A-D1; complete vanilla content/reward modifiers await E2 eligibility and single-budget routing.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+          "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+        }
+      ],
+      "implementationSignature": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/CombatRoom.cs",
+            "sha256": "A2224E32BCF5F24CD043CEDC637349C39902FD9FB2D606FA60E6DCB60ECC5CB1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.RestSite",
+      "domain": "RoomType",
+      "enumValue": 7,
+      "displayName": "RestSite",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "RestSite"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "D2 Rest Focus",
+        "D2 Smith",
+        "D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "MemberTargetResolver",
+        "DualDeckCardSelector",
+        "RelicEligibilityResolver"
+      ],
+      "adapterFamily": [
+        "MemberTargetResolver",
+        "DualDeckCardSelector",
+        "RelicEligibilityResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "D2 Rest Focus 30/10 and Smith are accepted; additional relic-provided actions/bonuses need eligibility and one-service budget.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RestSiteRoom.cs",
+          "sha256": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6"
+        }
+      ],
+      "implementationSignature": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RestSiteRoom.cs",
+            "sha256": "87F29538524491CDC70773488E85F2177AEEDEC9809E8B44126EC2964EB379C6"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Shop",
+      "domain": "RoomType",
+      "enumValue": 5,
+      "displayName": "Shop",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Shop"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [
+        "D2 Merchant 2+2 card shelf",
+        "D2 Remove",
+        "D2 Save/Continue"
+      ],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "adapterFamily": [
+        "RelicEligibilityResolver",
+        "PotionEligibilityResolver",
+        "DualDeckCardSelector"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "D2 owner-specific 2+2 card shelf and Remove are accepted; vanilla relic/potion shelves and refill content still require compatibility eligibility.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MerchantRoom.cs",
+          "sha256": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733"
+        }
+      ],
+      "implementationSignature": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/MerchantRoom.cs",
+            "sha256": "EE6B667E02C578FD32815E707EC35C496A7CA193ADD9A1E59BA2FB87E2C9C733"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_POTIONS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        },
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_CARDS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Treasure",
+      "domain": "RoomType",
+      "enumValue": 4,
+      "displayName": "Treasure",
+      "normalRunReachable": true,
+      "reachabilityCondition": "NORMAL_RUN",
+      "resolvedRoomTypes": [
+        "Treasure"
+      ],
+      "classification": "GENERIC_ADAPTER",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [
+        "RelicEligibilityResolver",
+        "ContractEffectResolver"
+      ],
+      "adapterFamily": [
+        "RelicEligibilityResolver",
+        "ContractEffectResolver"
+      ],
+      "saveRisk": [
+        "ROOM_CONTENT_ELIGIBILITY_AND_REWARD_STATE"
+      ],
+      "mapEligibility": {
+        "vanilla": "ACT_AND_MAP_REGISTRY_OR_RUN_TRANSITION",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "ENABLE_AFTER_E2_GENERIC",
+      "customReason": null,
+      "filterReason": null,
+      "notes": "Single Player shared treasure selection preserves one relic budget; its complete reward ecosystem requires eligibility plus the selected relic scopes.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/TreasureRoom.cs",
+          "sha256": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF"
+        }
+      ],
+      "implementationSignature": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/TreasureRoom.cs",
+            "sha256": "5EADA64B94BEC72C627239C7C0F3F46F7A0A8DF96EA1C0F693EE6392470884AF"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": [
+        {
+          "dependencyType": "OPTIONAL_CANDIDATE_POOL",
+          "dependencySemantics": "OPTIONAL_CANDIDATE_POOL",
+          "targetId": "POOL.NATIVE_RELICS",
+          "gateStage": "CANDIDATE_POOL_BEFORE_RNG",
+          "readinessGuard": {
+            "filterBeforeRoll": true,
+            "validateWholeBudgetBeforePresentingSource": true,
+            "nonemptyCandidatePool": true
+          },
+          "terminalFilteringAllowed": false
+        }
+      ]
+    },
+    {
+      "roomTypeId": "RoomType.Unassigned",
+      "domain": "RoomType",
+      "enumValue": 0,
+      "displayName": "Unassigned",
+      "normalRunReachable": false,
+      "reachabilityCondition": "SENTINEL_NOT_ENTERABLE",
+      "resolvedRoomTypes": [
+        "Unassigned"
+      ],
+      "classification": "FILTERED_PUBLIC_ALPHA",
+      "currentSupport": [],
+      "fullVanillaEcosystemVerified": false,
+      "neededAdapter": [],
+      "adapterFamily": [],
+      "saveRisk": [
+        "FULL_MAP_OR_TRANSITION_LIFECYCLE"
+      ],
+      "mapEligibility": {
+        "vanilla": "NONE",
+        "rinArcher": "EXISTING_ACCEPTED_SLICE_ROUTE_ONLY",
+        "eligibilityChangesApplied": false
+      },
+      "publicAlphaStatus": "KEEP_FILTERED_FOR_V0_0_0_0_1",
+      "customReason": null,
+      "filterReason": "Sentinel/transitional value has no standalone CreateRoom branch. MapPointType.Unassigned has a first-run tutorial override to Event, which is not an ordinary room.",
+      "notes": "Sentinel/transitional value has no standalone CreateRoom branch. MapPointType.Unassigned has a first-run tutorial override to Event, which is not an ordinary room.",
+      "sourceEvidence": [
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+          "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+        },
+        {
+          "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+          "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+        }
+      ],
+      "implementationSignature": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1",
+      "targetSourceAudit": {
+        "status": "PASS",
+        "kind": "ROOM_DISPATCH_DOMAIN",
+        "sourceBasis": "NATIVE_ENUM_AND_RUNMANAGER_CREATE_ROOM; room domains dispatch services, not personal Creature commands",
+        "inspectedSources": [
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomType.cs",
+            "sha256": "1AB2C2F4DF5979138C0C30E9C5ED2773BCBD2C6F35CF06B25EAE7B0E2E8E4D7E"
+          },
+          {
+            "source": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Runs/RunManager.cs",
+            "sha256": "1C4D11B1B2261F2E5A0E7338866D0CA8C219152567700C9608D23F46A15258E1"
+          }
+        ],
+        "budgetPolicy": "ONE_NATIVE_ROOM_SERVICE_BUDGET",
+        "dependencyPolicy": "NATIVE_CANDIDATE_POOL_INTERSECTION_BEFORE_ROLL; NO_TERMINAL_FILTERING"
+      },
+      "contentDependencies": []
+    }
+  ]
+}

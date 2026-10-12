@@ -1,0 +1,432 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "category": {
+      "const": "potions"
+    },
+    "gameVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "gameCommit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contentId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "modelType": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourceSha256": {
+            "type": "string",
+            "pattern": "^[A-F0-9]{64}$"
+          },
+          "implementationSignature": {
+            "type": "string",
+            "pattern": "^[A-F0-9]{64}$"
+          },
+          "classification": {
+            "enum": [
+              "NATIVE_SAFE",
+              "GENERIC_ADAPTER",
+              "CUSTOM_ADAPTER",
+              "FILTERED_PUBLIC_ALPHA"
+            ]
+          },
+          "effects": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "effectId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "trigger": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "vanillaTargetSemantic": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "proposedDualScope": {
+                  "enum": [
+                    "CONTRACT",
+                    "ACTIVE_AT_TRIGGER",
+                    "CARD_OWNER",
+                    "DAMAGE_TARGET",
+                    "CHOOSE_MEMBER",
+                    "CHOOSE_DECK",
+                    "DUAL_DECK_SELECTOR",
+                    "RANDOM_PERMANENT_CARD_UNION",
+                    "ACTIVE_HAND",
+                    "ENEMY",
+                    "UNSAFE"
+                  ]
+                },
+                "classification": {
+                  "enum": [
+                    "NATIVE_SAFE",
+                    "GENERIC_ADAPTER",
+                    "CUSTOM_ADAPTER",
+                    "FILTERED_PUBLIC_ALPHA"
+                  ]
+                },
+                "adapterFamily": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "saveRisk": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "handBankingRisk": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "dualDeckRisk": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "rewardBudgetRisk": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "deathTurnRisk": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "publicAlphaStatus": {
+                  "enum": [
+                    "ENABLE_AFTER_CUSTOM_ADAPTER",
+                    "ENABLE_AFTER_E2_GENERIC",
+                    "KEEP_FILTERED_FOR_V0_0_0_0_1"
+                  ]
+                },
+                "notes": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "customReason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "filterReason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "targetSource": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "expression": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "path": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "sourceBasis": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "expression",
+                    "path",
+                    "sourceBasis"
+                  ]
+                },
+                "evidence": {
+                  "type": "object",
+                  "properties": {
+                    "source": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "line": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "source",
+                    "line"
+                  ]
+                },
+                "vanillaBudget": {
+                  "type": "object",
+                  "properties": {
+                    "policy": {
+                      "const": "PRESERVE_VANILLA_EFFECT_BUDGET"
+                    },
+                    "duplicationAllowed": {
+                      "const": false
+                    }
+                  },
+                  "required": [
+                    "policy",
+                    "duplicationAllowed"
+                  ]
+                }
+              },
+              "required": [
+                "effectId",
+                "trigger",
+                "vanillaTargetSemantic",
+                "proposedDualScope",
+                "classification",
+                "adapterFamily",
+                "saveRisk",
+                "handBankingRisk",
+                "dualDeckRisk",
+                "rewardBudgetRisk",
+                "deathTurnRisk",
+                "publicAlphaStatus",
+                "notes",
+                "customReason",
+                "filterReason",
+                "targetSource",
+                "evidence",
+                "vanillaBudget"
+              ],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "classification": {
+                        "const": "GENERIC_ADAPTER"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "adapterFamily": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "adapterFamily"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "classification": {
+                        "const": "CUSTOM_ADAPTER"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "customReason": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "customReason"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "classification": {
+                        "const": "FILTERED_PUBLIC_ALPHA"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "filterReason": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "filterReason"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "contentDependencies": {
+            "type": "array"
+          },
+          "dependencyReadiness": {
+            "type": "object"
+          },
+          "normalRunObtainable": {
+            "type": "boolean"
+          },
+          "eligibilityChangesApplied": {
+            "const": false
+          },
+          "customReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "filterReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rarity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sourcePool": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "targetMode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "usage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "combatEligibility": {
+            "type": "boolean"
+          },
+          "noncombatEligibility": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "contentId",
+          "displayName",
+          "modelType",
+          "source",
+          "sourceSha256",
+          "implementationSignature",
+          "classification",
+          "effects",
+          "contentDependencies",
+          "dependencyReadiness",
+          "normalRunObtainable",
+          "eligibilityChangesApplied",
+          "customReason",
+          "filterReason",
+          "rarity",
+          "sourcePool",
+          "targetMode",
+          "usage",
+          "combatEligibility",
+          "noncombatEligibility"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "classification": {
+                  "const": "CUSTOM_ADAPTER"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "customReason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "customReason"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "classification": {
+                  "const": "FILTERED_PUBLIC_ALPHA"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "filterReason": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "filterReason"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "category",
+    "gameVersion",
+    "gameCommit",
+    "items"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

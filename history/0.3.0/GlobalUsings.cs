@@ -1,0 +1,14 @@
+global using Godot;
+global using HarmonyLib;
+global using BaseLib.Abstracts;
+global using BaseLib.Utils;
+global using MegaCrit.Sts2.Core.Combat;
+global using MegaCrit.Sts2.Core.Commands;
+global using MegaCrit.Sts2.Core.Entities.Cards;
+global using MegaCrit.Sts2.Core.Entities.Creatures;
+global using MegaCrit.Sts2.Core.Entities.Players;
+global using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+global using MegaCrit.Sts2.Core.Models;
+global using MegaCrit.Sts2.Core.Localization.DynamicVars;
+global using MegaCrit.Sts2.Core.Runs;
+global using MegaCrit.Sts2.Core.ValueProps;

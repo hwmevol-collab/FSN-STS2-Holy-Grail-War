@@ -1,0 +1,25 @@
+{
+  "Schema": 1,
+  "Variants": [
+    {
+      "Game": {
+        "GameVersion": "v0.107.1",
+        "Commit": "59260271",
+        "AssemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+        "AssemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb"
+      },
+      "Directory": "lib/0.107.1",
+      "PayloadSha256": "8855C0C4C71A3DCC1AFC14300F091529C1C2FBE70F51FB816ED232A3538E85A4"
+    },
+    {
+      "Game": {
+        "GameVersion": "v0.111.0",
+        "Commit": "41cef1ea",
+        "AssemblySha256": "0861BFA1DF347538D932F22D580E75420F08082792EB914E53B4882764ACDBE9",
+        "AssemblyMvid": "73b63ee0-6c0a-47bb-b0d1-b21f6d94222e"
+      },
+      "Directory": "lib/0.111.0",
+      "PayloadSha256": "B47CC0BB5F78AE6152BB66B1CA41FA509A97ACE85C127B25A3378089544EB9BF"
+    }
+  ]
+}

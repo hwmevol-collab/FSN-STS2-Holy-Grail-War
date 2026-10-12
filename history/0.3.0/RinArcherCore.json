@@ -1,0 +1,7 @@
+{
+  "id": "RinArcherCore", "name": "凛 / 弓兵 — Milestone C Alpha Card Pool",
+  "author": "Murasame", "version": "0.3.0", "min_game_version": "0.107.1",
+  "description": "Alpha Gameplay Validation：28 张 Reward 及升级、双 Owner Draft Lab、三件投影兵装与强制构筑 QA。非正式 Reward Run。",
+  "has_dll": true, "has_pck": false, "affects_gameplay": true,
+  "dependencies": [{"id":"BaseLib","min_version":"3.4.7"},{"id":"STS2-RitsuLib","min_version":"0.6.6"}]
+}

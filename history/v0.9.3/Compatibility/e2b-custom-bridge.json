@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "matrixRevision": "E1_MATRIX_AMENDMENT_04",
+  "capability": "E2B_FULL_ACT_ROOM_SPINE",
+  "customReadyIds": [
+    "EVENT.COLOSSAL_FLOWER",
+    "EVENT.JUNGLE_MAZE_ADVENTURE",
+    "EVENT.LOST_WISP",
+    "EVENT.NEOW",
+    "EVENT.TEZCATARA"
+  ],
+  "classificationPolicy": "Five exact IDs retain CUSTOM_ADAPTER; native Act, character, unlock and IsAllowed conditions remain mandatory. Other C/D stay closed.",
+  "eventExhaustion": "Keep native unique-first search and native allowing-repetition fallback. Recheck IsAllowed in one bounded native pool cycle; genuinely empty eligible pool rejects before mutation/RNG. No new repeatability policy.",
+  "scopes": {
+    "JungleMazeAdventure": "native shared gold once; chosen member pays native 18 HP",
+    "ColossalFlower": "native Rin >=19 gate; chosen member pays 5+6+7 HP; native gold 35/75/135 or already-ready PollinousCore",
+    "Neow": "native Owner Rin entry heal; at least two compatible positives and one compatible curse before RNG",
+    "Tezcatara": "native Owner Rin entry heal; one native-compatible reward from each original option pool",
+    "LostWisp": "Native Search 60 +/-15 shared gold once; Claim one native Decay mapped to exactly one selected owned deck plus one native LostWisp relic. Decay preserves unplayable, no upgrades, 2 Unpowered|Move end-turn damage to its frozen owner; absent from normal card/reward/shop pools."
+  },
+  "bossContract": "Three distinct accepted Rare Alpha candidates, explicit mixed Owner, choose 0-1 total; normal DualReward unchanged",
+  "sourceEvidence": [
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/JungleMazeAdventure.cs",
+      "sha256": "06000356AF1201B69C1CE9E4EF1D3506FF96B98665924C64DF6F3820F0DBC944"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/ColossalFlower.cs",
+      "sha256": "BB623A8B816ED8477B2185999AF535B16D08CB31950620EEC255E4AD6B13B6DF"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/Neow.cs",
+      "sha256": "8FDE3BBFB6C36F8F23546A3738ECECF94B3AE6B49C709FDD895C0B611C684000"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/Tezcatara.cs",
+      "sha256": "7370A6A92FEBEC7E0FC403451ABE331A2F696251947469C76DC270AD4CE3BCB2"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/LostWisp.cs",
+      "sha256": "DF8684EE5931787ED00B8DD7E57AAF26309254D63177DC62E83EA43F01AC0306"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Cards/Decay.cs",
+      "sha256": "897EDB12E9E1DC06BD21ED0CCCC6BA71D3FFB2284C366F46F97AC42233DD2B3B"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomSet.cs",
+      "sha256": "9B7694FF48D8F13B7365227442F458676BB545A1BEDF452AEA837093385091CC"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Relics/Gorget.cs",
+      "sha256": "28DB32949FC3678C6818D1738976D766B44602D3B33E016559716B65F49528C0"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Powers/PlatingPower.cs",
+      "sha256": "F8E6F35B5DF38EC5D79234CCC25A8E6E51F65EF01DB10043BE23C5BEE64C377A"
+    },
+    {
+      "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Powers/RegenPower.cs",
+      "sha256": "DF12E59B8BFBE3278FCFB4D5E71441B3741468B049BBCC4510664B00D1F1DBE9"
+    }
+  ],
+  "dependencyProviders": {
+    "EVENT.LOST_WISP->CARD.DECAY": {
+      "model": "RinArcherCore.FullActOwnedDecay",
+      "scope": "ONLY native LostWisp Claim",
+      "count": 1,
+      "nativeEffectSource": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Cards/Decay.cs"
+    },
+    "EVENT.LOST_WISP->RELIC.LOST_WISP": {
+      "requires": "existing native eligibility/readiness",
+      "count": 1
+    }
+  },
+  "fixedSourceCustomReadyIds": [
+    "RELIC.GORGET"
+  ],
+  "fixedSourcePolicy": "Gorget stays C. Only native first-run forced Treasure/restore/obtain, one original reward; never random pools or shop. AfterRoomEntered single ACTIVE_AT_TRIGGER 4 Plating, native member shared-turn timers."
+}

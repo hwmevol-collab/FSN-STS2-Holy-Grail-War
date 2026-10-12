@@ -1,0 +1,16 @@
+**/bin/
+**/obj/
+**/.godot/
+**/__pycache__/
+artifacts/
+local/
+*.user
+*.suo
+.env*
+*.log
+*.save
+*.dll
+*.pdb
+*.pck
+*.zip
+*.7z

@@ -1,0 +1,135 @@
+[
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.1.0",
+    "file": "RinArcherCore-0.1.0-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 43614
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.2.0",
+    "file": "RinArcherCore-0.2.0-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 60954
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.2.1",
+    "file": "RinArcherCore-0.2.1-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 62809
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.3.0",
+    "file": "RinArcherCore-0.3.0-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 96570
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.4.0",
+    "file": "RinArcherCore-0.4.0-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 120946
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.5.0",
+    "file": "RinArcherCore-0.5.0-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 153346
+  },
+  {
+    "group": "archive-milestones-a-d",
+    "version": "0.5.1",
+    "file": "RinArcherCore-0.5.1-historical-mod-only.zip",
+    "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
+    "bytes": 155329
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.1",
+    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.1.zip",
+    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
+    "bytes": 43180656
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.2",
+    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.2.zip",
+    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
+    "bytes": 43181953
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-0.9.4-game-compat.1-107",
+    "file": "FSN-RinArcher-0.9.4-game-compat.1-107.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43199484
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-0.9.4-game-compat.1-111",
+    "file": "FSN-RinArcher-0.9.4-game-compat.1-111.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43201343
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-0.9.4-game-compat.1-dual",
+    "file": "FSN-RinArcher-0.9.4-game-compat.1-dual.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 44082341
+  },
+  {
+    "group": "final",
+    "version": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual",
+    "file": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual.zip",
+    "status": "Final Windows beta, tested exact v0.107.1 and v0.111.0 builds. Android unsupported.",
+    "bytes": 44084407
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-vanilla-compat.1",
+    "file": "FSN-RinArcher-v0.9.4-vanilla-compat.1.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43198536
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Public-Beta-v0.9.4",
+    "file": "FSN-RinArcher-Public-Beta-v0.9.4.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43178763
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Public-Beta-v0.9.1",
+    "file": "FSN-RinArcher-Public-Beta-v0.9.1.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 41261101
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Public-Beta-v0.9.2",
+    "file": "FSN-RinArcher-Public-Beta-v0.9.2.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 41261077
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Public-Beta-v0.9.3",
+    "file": "FSN-RinArcher-Public-Beta-v0.9.3.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43167943
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Workshop-Beta-RC01-v0.9.1",
+    "file": "FSN-RinArcher-Workshop-Beta-RC01-v0.9.1.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 41261101
+  }
+]

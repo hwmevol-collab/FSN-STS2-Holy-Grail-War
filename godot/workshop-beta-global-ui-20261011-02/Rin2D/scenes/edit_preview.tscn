@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://Rin2D/scenes/rin_a.tscn" id="Rin"]
+[ext_resource type="Script" path="res://Rin2D/scenes/edit_preview.gd" id="Preview"]
+[node name="RinAnimationEditorPreview" type="Node2D"]
+script = ExtResource("Preview")
+[node name="Rin" parent="." instance=ExtResource("Rin")]
+position = Vector2(640,770)
+scale = Vector2(0.44,0.44)
+[node name="Explanation" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 24.0
+text = "A 方案关键帧编辑预览 · Space 重播 0.94 秒动作\n真实战斗与目标绑定请从独立 Candidate 启动"
+theme_override_font_sizes/font_size = 24

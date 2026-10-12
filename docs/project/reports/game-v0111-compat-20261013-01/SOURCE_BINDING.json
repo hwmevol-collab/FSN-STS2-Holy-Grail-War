@@ -1,0 +1,167 @@
+{
+  "baseline": "0.9.4-vanilla-compat.1",
+  "baselineSha256": "A4CFF4A286C480372CA1F2846F756AB7F5AFA63528578E5DACC0FCB85A47CCBE",
+  "revision": "0.9.4-game-compat.1",
+  "changedSource": [
+    {
+      "path": "RinArcherCore.csproj",
+      "sha256": "16FDF01353B0A1BAC1A24604980879CA4C1D9ED2F30E4FDAA818DD84AFDAF1A4"
+    },
+    {
+      "path": "Compatibility/AlphaHooks.cs",
+      "sha256": "CBE4C8DAE444FAB9FF9D5D0C7402AF1AF84B13FAB5BAE6B6D6AA59F3CD8B66BD"
+    },
+    {
+      "path": "Compatibility/ContentPaths.cs",
+      "sha256": "7110F0E2FD3B166EF7C50C09884EFA68DE814F8882FFD4669D9D41E9D64A0023"
+    },
+    {
+      "path": "Compatibility/FullActEventBridge.cs",
+      "sha256": "8BF1B4CD63D3DCCF382FCE7DD64D60ABBFDB13100FB36ADC002FC408196F2E6A"
+    },
+    {
+      "path": "Compatibility/GameApi.cs",
+      "sha256": "98F8B4AD72E2202785B078871F2EEF171399CC3F1E4AE156CD435FE4AA1FE125"
+    },
+    {
+      "path": "Compatibility/GameBuildCompatibility.cs",
+      "sha256": "6448A6D31832780C2AFEE0EBC37513C48330E8C49EA3D35AD779CB7AD8C92C07"
+    },
+    {
+      "path": "Compatibility/GenericAcquisitionHooks.cs",
+      "sha256": "5B6DAAC23F122BDC6F14047E0AFC5F1CAF0A36ABDAEA2F8F4348493C4037227B"
+    },
+    {
+      "path": "Compatibility/GenericMerchantStock.cs",
+      "sha256": "7A9BB925AA09F0FE943C88FB2BD77B1327352A1D28FDAFDA121E6277538FEDB8"
+    },
+    {
+      "path": "Compatibility/GenericScopeHooks.cs",
+      "sha256": "108D11D3B08F448B79BBFAF9818A137E7B5765954D3C4DABC19F5683238652AD"
+    },
+    {
+      "path": "Compatibility/MerchantHooks.cs",
+      "sha256": "0B7B585C0A6264A1054A8387598BB1670B628CC0ABEBE9185DDA47BA00E18A83"
+    },
+    {
+      "path": "Compatibility/RewardHooks.cs",
+      "sha256": "DA81C4C826ABB6D9BD6048A5DF870977499C8B2C060A8DE88DCE635856116931"
+    },
+    {
+      "path": "Compatibility/RuntimeHooks.cs",
+      "sha256": "EC68F8A54C56D603CEF35951F2FEDDEFA43ECB92B5E8AB292861C65715B3B305"
+    },
+    {
+      "path": "Compatibility/VanillaCardAcquisition.cs",
+      "sha256": "A6C6CE2E4DDB480A1AD3A5DD3D6584C9789B17571EA1398F0237FD804C4BB1A9"
+    },
+    {
+      "path": "Compatibility/VanillaCompatibilityRegistry.cs",
+      "sha256": "B5064177A52C8158C36A9D7536E8E74EF99D7B7EDA6D354CDFB7B9781D2CF112"
+    },
+    {
+      "path": "QA/D1Run.cs",
+      "sha256": "15C39A87CD0B10DA5CD0E57628B284BDE9EABE6F5E89A62408C4B120BB0C5C21"
+    },
+    {
+      "path": "QA/QaFieldPressure.cs",
+      "sha256": "DA12C5520CFEA772FD8B06619E4C2314ECA81117C4403F2592F84DAEC8206618"
+    },
+    {
+      "path": "QA/QaPairBasic.cs",
+      "sha256": "A897B5F500FD00FA921BDBD7B58ED09063CD212DE70BDFF5F66264C8FC792352"
+    },
+    {
+      "path": "Runtime/ExpansionMechanics.cs",
+      "sha256": "3D104003EC4A896D1A7D88E4A8AA1486685E74829548C43960C0AF8D9AD45F2C"
+    },
+    {
+      "path": "Runtime/ExpansionRules.cs",
+      "sha256": "D21B688A05589B35F3FF5658F67CA1A2ADA9AA2DDBE786BEE03807D3A1202C33"
+    },
+    {
+      "path": "Runtime/GenericCombatCardOwnership.cs",
+      "sha256": "74844674E91965B6DF363EA220F069ECD191401E234C91097E55F1EBB6F7FEA2"
+    },
+    {
+      "path": "Runtime/Targeting.cs",
+      "sha256": "EDC5FAFC9A9F113354CD2960940F855D56B7A9E2A4EE1F6CCE0E8FEA7B021584"
+    },
+    {
+      "path": "Runtime/VanillaEffectResolvers.cs",
+      "sha256": "C7D2B1D32BAA27C092C7641D995B0B763D347724160DB97287CC5A2F5A0D76FB"
+    },
+    {
+      "path": "UI/ContractActionSequence.cs",
+      "sha256": "7DE16664AC78627242A4B5B4E5DCF24605BE7A92BAC41B728CA778A5B192C5B6"
+    },
+    {
+      "path": "UI/ContractActor.cs",
+      "sha256": "EEEC50323D2C031566BF3BC0E1EFB83E3BE60D81567DEC4631975B9200AACDEE"
+    },
+    {
+      "path": "UI/ContractSelectMusic.cs",
+      "sha256": "DABD6858479BD5E53717FBB983054FD0D9A1C508923AC49D207243E23CCBD8FC"
+    },
+    {
+      "path": "UI/FriendlyPotionTargeting.cs",
+      "sha256": "AF4738578A28C1CCA795B0EA9D5F63CBD31BA42C5C21372F91125F54FE57F126"
+    },
+    {
+      "path": "UI/FsnLocalization.cs",
+      "sha256": "00C2B9DE5C451322E1E195A14D66254F8FB613B03E57503A7571ACD2BDB2861A"
+    },
+    {
+      "path": "UI/MemberTargetUi.cs",
+      "sha256": "7F2ED4868E467C50B8A11D70EB71A04F8A84438D4504566F84397D7A0477B17F"
+    },
+    {
+      "path": "UI/PresentationTheme.cs",
+      "sha256": "01BA1EEEFBAA07B1E519050C88E3C1F640BD0F1605AE19BE12517E5FACEB1953"
+    },
+    {
+      "path": "UI/ReleaseCompatibilityGate.cs",
+      "sha256": "CE123BDF4939918FC101E95FEF9794F7907C02646CE1185F787BD2DFF06CB66D"
+    },
+    {
+      "path": "UI/RestFocusInput.cs",
+      "sha256": "96CC4B978E8FC9483D92A0ED89A9C336C139C66943F0BE60547B0F0EF7DB275E"
+    },
+    {
+      "path": "UI/RinGandrRuntimeEffect.cs",
+      "sha256": "4CFCD27DFEAF98A72A843FB35F22043478C715BEA67183339962EEF2EC53DE13"
+    },
+    {
+      "path": "UI/StartingActiveChoiceUi.cs",
+      "sha256": "B294977A7523DFDACED7D5E3E93F8FCAB55842EFA5A8006DAA61CE100CF71007"
+    }
+  ],
+  "variants": {
+    "111": {
+      "game": {
+        "GameVersion": "v0.111.0",
+        "Commit": "41cef1ea",
+        "AssemblySha256": "0861BFA1DF347538D932F22D580E75420F08082792EB914E53B4882764ACDBE9",
+        "AssemblyMvid": "73b63ee0-6c0a-47bb-b0d1-b21f6d94222e"
+      },
+      "payloadSha256": "37F772A454422148C73BFB4D01B80E26278B31272DE5B7950E58FEE959C6A727",
+      "runtimeChecks": 42,
+      "negativeChecks": 21,
+      "result": "runtime-111-graph-dual-02/presentation-results.json"
+    },
+    "107": {
+      "game": {
+        "GameVersion": "v0.107.1",
+        "Commit": "59260271",
+        "AssemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+        "AssemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb"
+      },
+      "payloadSha256": "D2EC45215B8BC6FC2B3D2F64FC36B14FF97117D6D8E44C732FCF7E702F774F36",
+      "runtimeChecks": 42,
+      "negativeChecks": 21,
+      "result": "runtime-107-graph-dual-01/presentation-results.json"
+    }
+  },
+  "loaderSha256": "4E1AF26372E6594241157859B0BA3CB1B19063C91F9316571DF372809811A328",
+  "templateCommit": "767e7be8c1f7d7a0d51e261e1147023d852ab881"
+}

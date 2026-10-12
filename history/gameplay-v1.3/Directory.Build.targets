@@ -1,0 +1,11 @@
+<Project>
+  <!-- Add frozen registry resources only to the mod; preserve accepted project files. -->
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'RinArcherCore' and '$(IncludeE2ARegistry)' != 'false'">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Compatibility/relics.json;$(MSBuildThisFileDirectory)Compatibility/potions.json;$(MSBuildThisFileDirectory)Compatibility/events.json;$(MSBuildThisFileDirectory)Compatibility/rooms.json;$(MSBuildThisFileDirectory)Compatibility/summary.json;$(MSBuildThisFileDirectory)Compatibility/public-alpha-allowlist-draft.json;$(MSBuildThisFileDirectory)Compatibility/adapter-families.json;$(MSBuildThisFileDirectory)Compatibility/dependency-graph.json;$(MSBuildThisFileDirectory)Compatibility/matrix-signature.json" LogicalName="RinArcherCore.Compatibility.%(Filename)%(Extension)" />
+  </ItemGroup>
+  <!-- Reproduce the accepted D2 outputs for baseline verification, without changing
+       the source or weakening tests. The default build includes the new component. -->
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'RinArcherCore' and '$(IncludeE2ARegistry)' == 'false'">
+    <Compile Remove="Compatibility/VanillaCompatibilityRegistry.cs;Compatibility/CompatibilityMatrixFingerprint.cs" />
+  </ItemGroup>
+</Project>

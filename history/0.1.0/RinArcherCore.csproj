@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <AssemblyName>RinArcherCore</AssemblyName><EnableDynamicLoading>true</EnableDynamicLoading>
+    <GameDir>E:\SteamLibrary\steamapps\common\Slay the Spire 2</GameDir>
+    <RitsuLibReferenceTarget>0.107.1</RitsuLibReferenceTarget>
+  </PropertyGroup>
+  <Import Project="dependencies/RitsuLib.References.props" />
+  <ItemGroup>
+    <Compile Remove="tests/**;dependencies/**;dist/**;native-runtime/**;backups/**;installed-boot-profile/**" />
+    <Reference Include="sts2" HintPath="$(GameDir)/data_sts2_windows_x86_64/sts2.dll" Private="false" />
+    <Reference Include="GodotSharp" HintPath="$(GameDir)/data_sts2_windows_x86_64/GodotSharp.dll" Private="false" />
+    <Reference Include="0Harmony" HintPath="$(GameDir)/data_sts2_windows_x86_64/0Harmony.dll" Private="false" />
+    <Reference Include="BaseLib" HintPath="E:/SteamLibrary/steamapps/workshop/content/2868840/3737335127/BaseLib/BaseLib.dll" Private="false" />
+  </ItemGroup>
+</Project>

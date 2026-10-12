@@ -1,0 +1,29 @@
+{
+  "overall": "PARTIAL_FULL_VANILLA_COMPATIBILITY",
+  "scopedFixes": "PASS",
+  "game": "v0.107.1 / 59260271",
+  "baseline": "0.9.4-android-startup-fix.2",
+  "candidate": "0.9.4-vanilla-compat.1",
+  "sha256": "A4CFF4A286C480372CA1F2846F756AB7F5AFA63528578E5DACC0FCB85A47CCBE",
+  "counts": {
+    "events": {
+      "total": 69,
+      "adapterReady": 45,
+      "notReady": 24
+    },
+    "relics": {
+      "total": 297,
+      "adapterReady": 215,
+      "notReady": 82
+    }
+  },
+  "effectRows": 1008,
+  "directed": 496,
+  "actualBattleAndEventDiskContinue": 42,
+  "humanQA": "PENDING",
+  "android": "PENDING",
+  "fullHumanRun": "NOT_TESTED",
+  "network": "NOT_TESTED",
+  "workshopUploaded": false,
+  "archiveSha256": "AC739C4FC0ADD198B68EBE2D688D34C52DCE8C26EFE3B19D0ADB14FD208F56EA"
+}

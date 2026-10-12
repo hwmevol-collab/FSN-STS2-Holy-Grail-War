@@ -1,0 +1,14 @@
+<Project>
+  <!-- Portable references; production C# and verified identity guards are unchanged. -->
+  <ItemGroup Condition="'$(GameDir)' != ''">
+    <Reference Update="sts2" HintPath="$(GameDir)/data_sts2_windows_x86_64/sts2.dll" />
+    <Reference Update="GodotSharp" HintPath="$(GameDir)/data_sts2_windows_x86_64/GodotSharp.dll" />
+    <Reference Update="0Harmony" HintPath="$(GameDir)/data_sts2_windows_x86_64/0Harmony.dll" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(BaseLibDll)' != ''">
+    <Reference Update="BaseLib" HintPath="$(BaseLibDll)" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(MSBuildProjectName)' == 'RinArcherCore' and Exists('$(MSBuildProjectDirectory)/Compatibility/matrix-signature.json') and '$(IncludeE2ARegistry)' != 'false'">
+    <EmbeddedResource Include="$(MSBuildProjectDirectory)/Compatibility/relics.json;$(MSBuildProjectDirectory)/Compatibility/potions.json;$(MSBuildProjectDirectory)/Compatibility/events.json;$(MSBuildProjectDirectory)/Compatibility/rooms.json;$(MSBuildProjectDirectory)/Compatibility/summary.json;$(MSBuildProjectDirectory)/Compatibility/public-alpha-allowlist-draft.json;$(MSBuildProjectDirectory)/Compatibility/adapter-families.json;$(MSBuildProjectDirectory)/Compatibility/dependency-graph.json;$(MSBuildProjectDirectory)/Compatibility/matrix-signature.json" LogicalName="RinArcherCore.Compatibility.%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,22 @@
+{
+  "version": "0.9.3",
+  "status": "PASS_SCOPED",
+  "checks": 91,
+  "dllSha256": "EA10E0F53ED63A512EC50AA7BE88A01894FE1E9FB4997DEC4B82B1404F3AC1B6",
+  "modifiedSourceFiles": [
+    "RinArcherCore.csproj",
+    "RinArcherCore.json",
+    "UI/ContractSelectMusic.cs"
+  ],
+  "archiveReadback": "PASS",
+  "originalMusicUnchanged": true,
+  "externalBgmEnvironment": false,
+  "actualPcmCaptured": [
+    "clean-install/selection-bgm-live-eng.wav",
+    "clean-install/selection-bgm-live-zhs.wav"
+  ],
+  "onlyThreeProductionMods": true,
+  "terminalContinuousEvidence": "PARTIAL_INHERITED",
+  "humanQA": "PENDING",
+  "uploaded": false
+}

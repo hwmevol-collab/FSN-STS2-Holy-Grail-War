@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "RIN_ARCHER_VANILLA_COMPATIBILITY_MATRIX_E1_PARTIAL",
+        "RIN_ARCHER_VANILLA_COMPATIBILITY_MATRIX_E1_PASS",
+        "RIN_ARCHER_VANILLA_COMPATIBILITY_MATRIX_E1_AMENDED_PASS"
+      ]
+    },
+    "game": {
+      "type": "object"
+    },
+    "counts": {
+      "type": "object"
+    },
+    "gates": {
+      "type": "object"
+    },
+    "DESIGN_DEVIATIONS": {
+      "const": 0
+    },
+    "DESIGN_CONTRACT_CONFLICT": {
+      "const": 0
+    },
+    "IMPLEMENTATION_BLOCKERS": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eligibilityChangesApplied": {
+      "const": false
+    },
+    "relicTotal": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relicNativeSafe": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relicGenericAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relicCustomAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relicFiltered": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "relicUnknown": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionTotal": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionNativeSafe": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionGenericAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionCustomAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionFiltered": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "potionUnknown": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventTotal": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventNativeSafe": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventGenericAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventCustomAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventFiltered": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "eventUnknown": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomTotal": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomNativeSafe": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomGenericAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomCustomAdapter": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomFiltered": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "roomUnknown": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "status",
+    "game",
+    "counts",
+    "gates",
+    "DESIGN_DEVIATIONS",
+    "DESIGN_CONTRACT_CONFLICT",
+    "IMPLEMENTATION_BLOCKERS",
+    "eligibilityChangesApplied",
+    "relicTotal",
+    "relicNativeSafe",
+    "relicGenericAdapter",
+    "relicCustomAdapter",
+    "relicFiltered",
+    "relicUnknown",
+    "potionTotal",
+    "potionNativeSafe",
+    "potionGenericAdapter",
+    "potionCustomAdapter",
+    "potionFiltered",
+    "potionUnknown",
+    "eventTotal",
+    "eventNativeSafe",
+    "eventGenericAdapter",
+    "eventCustomAdapter",
+    "eventFiltered",
+    "eventUnknown",
+    "roomTotal",
+    "roomNativeSafe",
+    "roomGenericAdapter",
+    "roomCustomAdapter",
+    "roomFiltered",
+    "roomUnknown"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "RinArcherCore", "name": "Rin / Archer - Milestone A Core",
+  "author": "Murasame", "version": "0.1.0", "min_game_version": "0.107.1",
+  "description": "NOT_SHIPPING_CONTENT. Rin/Archer core and QA_PAIR_BASIC only.",
+  "has_dll": true, "has_pck": false, "affects_gameplay": true,
+  "dependencies": [{"id":"BaseLib","min_version":"3.4.7"},{"id":"STS2-RitsuLib","min_version":"0.6.6"}]
+}

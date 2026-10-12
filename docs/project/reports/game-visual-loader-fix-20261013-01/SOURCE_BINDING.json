@@ -1,0 +1,16 @@
+{
+  "baseline": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\game-v0111-compat-20261013-01",
+  "candidateRevision": "visual-loader-fix-01",
+  "version": "0.9.4-game-compat.1",
+  "productionChanges": [
+    "source/UI/PresentationTheme.cs",
+    "loader/WorkshopBootstrap.cs"
+  ],
+  "unchangedSourceFiles": 229,
+  "unchangedPackageResources": 28,
+  "binaries": {
+    "build\\candidate-107\\RinArcherCore.dll": "8855C0C4C71A3DCC1AFC14300F091529C1C2FBE70F51FB816ED232A3538E85A4",
+    "build\\candidate-111\\RinArcherCore.dll": "B47CC0BB5F78AE6152BB66B1CA41FA509A97ACE85C127B25A3378089544EB9BF",
+    "build\\loader\\bin\\Release\\net9.0\\RinArcherCore.Loader.dll": "F69BA14A0D4E75FC3F9B1E4E3D345EABA3AA8F000C972DD278846EE6F3AA68C2"
+  }
+}

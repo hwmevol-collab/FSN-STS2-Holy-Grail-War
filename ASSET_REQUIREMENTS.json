@@ -1,0 +1,1837 @@
+[
+  {
+    "path": "src/dependencies/assets.zip",
+    "bytes": 522798,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/ritsulib-variants.manifest",
+    "bytes": 629,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/STS2-RitsuLib.dll",
+    "bytes": 36864,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-blade.png",
+    "bytes": 89064,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-bow.png",
+    "bytes": 196099,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-finisher.png",
+    "bytes": 238966,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-growth.png",
+    "bytes": 244955,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-power.png",
+    "bytes": 244955,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-projection.png",
+    "bytes": 89915,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-support.png",
+    "bytes": 76146,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/arc-ward.png",
+    "bytes": 83814,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer-cast.png",
+    "bytes": 272081,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer-face.png",
+    "bytes": 269402,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer.png",
+    "bytes": 269402,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer_cut.png",
+    "bytes": 136270,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer_power.png",
+    "bytes": 102317,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/archer_projection.png",
+    "bytes": 90096,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/bow.png",
+    "bytes": 461472,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/camp-duo.png",
+    "bytes": 2054891,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/circuit.png",
+    "bytes": 380305,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/construct.wav",
+    "bytes": 115244,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/contract-duo.png",
+    "bytes": 376429,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/contract-landscape.png",
+    "bytes": 859816,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/fsn-logo.png",
+    "bytes": 792078,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/gandr.wav",
+    "bytes": 26924,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/impact.wav",
+    "bytes": 34604,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/jewel.wav",
+    "bytes": 72044,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/pendant.png",
+    "bytes": 355716,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-bow.png",
+    "bytes": 312346,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-deflect.png",
+    "bytes": 476837,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-gandr.png",
+    "bytes": 550638,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-jewel.png",
+    "bytes": 186075,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-mana.png",
+    "bytes": 291158,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-melee.png",
+    "bytes": 339567,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-power.png",
+    "bytes": 776868,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-reinforcement.png",
+    "bytes": 402150,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/review-trace.png",
+    "bytes": 182436,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-attack.png",
+    "bytes": 364651,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-cast.png",
+    "bytes": 213663,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-face.png",
+    "bytes": 335654,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-finisher.png",
+    "bytes": 151444,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-growth.png",
+    "bytes": 239864,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-jewel.png",
+    "bytes": 188334,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-mana.png",
+    "bytes": 211710,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-power.png",
+    "bytes": 239531,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-support.png",
+    "bytes": 55284,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-trace.png",
+    "bytes": 75856,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin-ward.png",
+    "bytes": 57793,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin.png",
+    "bytes": 213155,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin_gandr.png",
+    "bytes": 103537,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin_jewel.png",
+    "bytes": 117519,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/rin_power.png",
+    "bytes": 157009,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/seal.png",
+    "bytes": 265339,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/select-archer.png",
+    "bytes": 556944,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/select-rin.png",
+    "bytes": 581082,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/slash.wav",
+    "bytes": 38444,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-bow.png",
+    "bytes": 1494142,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-deflect.png",
+    "bytes": 1421540,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-gandr.png",
+    "bytes": 1651429,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-jewel.png",
+    "bytes": 463859,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-mana.png",
+    "bytes": 839147,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-melee.png",
+    "bytes": 991199,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-power.png",
+    "bytes": 2569658,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-reinforcement.png",
+    "bytes": 1060979,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/source-review-trace.png",
+    "bytes": 444909,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/Presentation/Assets/sword-hill.png",
+    "bytes": 855647,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Settings.dll",
+    "bytes": 804864,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Settings.pdb",
+    "bytes": 314632,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Settings.xml",
+    "bytes": 592581,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Shared.dll",
+    "bytes": 275456,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Shared.pdb",
+    "bytes": 81236,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Shared.xml",
+    "bytes": 275985,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Ui.dll",
+    "bytes": 650240,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Ui.pdb",
+    "bytes": 322624,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/shared/STS2-RitsuLib.Ui.xml",
+    "bytes": 711217,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.dll",
+    "bytes": 66048,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.pdb",
+    "bytes": 24768,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.Runtime.dll",
+    "bytes": 6483456,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.Runtime.pdb",
+    "bytes": 1923740,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.Runtime.xml",
+    "bytes": 4814641,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.107.1/STS2-RitsuLib.xml",
+    "bytes": 130,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.dll",
+    "bytes": 66048,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.pdb",
+    "bytes": 24896,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.Runtime.dll",
+    "bytes": 6478336,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.Runtime.pdb",
+    "bytes": 1921880,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.Runtime.xml",
+    "bytes": 4891931,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "src/dependencies/compat/0.111.0/STS2-RitsuLib.xml",
+    "bytes": 138,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/atelier-action.png",
+    "bytes": 158493,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/atelier-action.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/atelier-idle.png",
+    "bytes": 137789,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/atelier-idle.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/inspect_runtime.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/pack.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/raw-rin-test.png",
+    "bytes": 148403,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/raw-rin-test.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer.glb",
+    "bytes": 620920,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer.glb.import",
+    "bytes": 1031,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_0.png",
+    "bytes": 22982,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_0.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_1.png",
+    "bytes": 954,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_1.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_2.png",
+    "bytes": 6658,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_2.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_3.png",
+    "bytes": 4072,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_3.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_4.png",
+    "bytes": 11792,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_4.png.import",
+    "bytes": 1000,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_body.png",
+    "bytes": 22426,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_body.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_coat.png",
+    "bytes": 16753,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_coat.png.import",
+    "bytes": 944,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_1.glb",
+    "bytes": 10928,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_1.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_2.glb",
+    "bytes": 10928,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_2.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_3.glb",
+    "bytes": 25280,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_3.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_4.glb",
+    "bytes": 15856,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_4.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_5.glb",
+    "bytes": 13472,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_5.glb.import",
+    "bytes": 1066,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_6.glb",
+    "bytes": 13472,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_equipment_6.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_0.png",
+    "bytes": 22982,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_0.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_1.png",
+    "bytes": 954,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_1.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_2.png",
+    "bytes": 6658,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_2.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_3.png",
+    "bytes": 4072,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_3.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_4.png",
+    "bytes": 11792,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/archer_texture_4.png.import",
+    "bytes": 958,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-0.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-1.png.import",
+    "bytes": 952,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-2.png.import",
+    "bytes": 952,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-3.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/embedded-rin-4.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin.glb",
+    "bytes": 543076,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin.glb.import",
+    "bytes": 1021,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_0.png.import",
+    "bytes": 991,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_1.png.import",
+    "bytes": 991,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_2.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_3.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_4.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated.glb",
+    "bytes": 845884,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated.glb.import",
+    "bytes": 1049,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_0.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_1.png.import",
+    "bytes": 1018,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_2.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_3.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_animated_4.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_body.png",
+    "bytes": 19736,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_body.png.import",
+    "bytes": 935,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_eye.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_eye.png.import",
+    "bytes": 932,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_face.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_face.png.import",
+    "bytes": 933,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_hair.png",
+    "bytes": 10606,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_hair.png.import",
+    "bytes": 935,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_mouth.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_mouth.png.import",
+    "bytes": 938,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_0.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_1.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_2.png.import",
+    "bytes": 949,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_3.png.import",
+    "bytes": 949,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/actors/rin_texture_4.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/actor.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/archer-authored.tres",
+    "bytes": 7099,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/archer-beta-actions.tres",
+    "bytes": 12926,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/atelier.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/card_renderer.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/inspect_face.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/projection.gdshader",
+    "bytes": 955,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/FSNReboot/projection.gdshader.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/scenes/edit_preview.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/scenes/gandr_fx.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/scenes/rin_a.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/scenes/rin_a_animation.tres",
+    "bytes": 2667,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/shaders/character.gdshader",
+    "bytes": 969,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/shaders/character.gdshader.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/00-idle.png",
+    "bytes": 1328579,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/00-idle.png.import",
+    "bytes": 937,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/01-raise.png",
+    "bytes": 1376331,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/01-raise.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/02-prepare.png",
+    "bytes": 1375397,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/02-prepare.png.import",
+    "bytes": 946,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/03-windup.png",
+    "bytes": 1445668,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/03-windup.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/04-extend.png",
+    "bytes": 1454177,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/04-extend.png.import",
+    "bytes": 941,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/05-release.png",
+    "bytes": 1436150,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/05-release.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/06-lower.png",
+    "bytes": 1461050,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/06-lower.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/06b-return.png",
+    "bytes": 1459044,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/06b-return.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/07-relax.png",
+    "bytes": 1386746,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/07-relax.png.import",
+    "bytes": 939,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/08-settle.png",
+    "bytes": 1391151,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/08-settle.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/09-blink.png",
+    "bytes": 1560678,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/A/09-blink.png.import",
+    "bytes": 939,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/FX/gandr-impact.png",
+    "bytes": 948365,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/FX/gandr-impact.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/FX/gandr-projectile.png",
+    "bytes": 531311,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-global-ui-20261011-02/Rin2D/art/FX/gandr-projectile.png.import",
+    "bytes": 965,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/atelier-action.png",
+    "bytes": 158493,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/atelier-action.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/atelier-idle.png",
+    "bytes": 137789,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/atelier-idle.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/inspect_runtime.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/pack.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/raw-rin-test.png",
+    "bytes": 148403,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/raw-rin-test.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer.glb",
+    "bytes": 620920,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer.glb.import",
+    "bytes": 1031,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_0.png",
+    "bytes": 22982,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_0.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_1.png",
+    "bytes": 954,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_1.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_2.png",
+    "bytes": 6658,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_2.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_3.png",
+    "bytes": 4072,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_3.png.import",
+    "bytes": 1001,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_4.png",
+    "bytes": 11792,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_4.png.import",
+    "bytes": 1000,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_body.png",
+    "bytes": 22426,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_body.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_coat.png",
+    "bytes": 16753,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_coat.png.import",
+    "bytes": 944,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_1.glb",
+    "bytes": 10928,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_1.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_2.glb",
+    "bytes": 10928,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_2.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_3.glb",
+    "bytes": 25280,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_3.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_4.glb",
+    "bytes": 15856,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_4.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_5.glb",
+    "bytes": 13472,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_5.glb.import",
+    "bytes": 1066,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_6.glb",
+    "bytes": 13472,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_equipment_6.glb.import",
+    "bytes": 1067,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_0.png",
+    "bytes": 22982,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_0.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_1.png",
+    "bytes": 954,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_1.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_2.png",
+    "bytes": 6658,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_2.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_3.png",
+    "bytes": 4072,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_3.png.import",
+    "bytes": 959,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_4.png",
+    "bytes": 11792,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/archer_texture_4.png.import",
+    "bytes": 958,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-0.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-1.png.import",
+    "bytes": 952,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-2.png.import",
+    "bytes": 952,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-3.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/embedded-rin-4.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin.glb",
+    "bytes": 543076,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin.glb.import",
+    "bytes": 1021,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_0.png.import",
+    "bytes": 991,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_1.png.import",
+    "bytes": 991,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_2.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_3.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_4.png.import",
+    "bytes": 992,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated.glb",
+    "bytes": 845884,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated.glb.import",
+    "bytes": 1049,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_0.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_1.png.import",
+    "bytes": 1018,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_2.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_3.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_animated_4.png.import",
+    "bytes": 1019,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_body.png",
+    "bytes": 19736,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_body.png.import",
+    "bytes": 935,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_eye.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_eye.png.import",
+    "bytes": 932,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_face.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_face.png.import",
+    "bytes": 933,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_hair.png",
+    "bytes": 10606,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_hair.png.import",
+    "bytes": 935,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_mouth.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_mouth.png.import",
+    "bytes": 938,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_0.png",
+    "bytes": 19832,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_0.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_1.png",
+    "bytes": 6842,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_1.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_2.png",
+    "bytes": 10340,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_2.png.import",
+    "bytes": 949,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_3.png",
+    "bytes": 4160,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_3.png.import",
+    "bytes": 949,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_4.png",
+    "bytes": 980,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/actors/rin_texture_4.png.import",
+    "bytes": 950,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/actor.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/archer-authored.tres",
+    "bytes": 7099,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/archer-beta-actions.tres",
+    "bytes": 12926,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/atelier.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/card_renderer.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/inspect_face.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/projection.gdshader",
+    "bytes": 955,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/FSNReboot/projection.gdshader.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/scenes/edit_preview.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/scenes/gandr_fx.gd.uid",
+    "bytes": 19,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/scenes/rin_a.gd.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/scenes/rin_a_animation.tres",
+    "bytes": 2667,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/shaders/character.gdshader",
+    "bytes": 969,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/shaders/character.gdshader.uid",
+    "bytes": 20,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/00-idle.png",
+    "bytes": 1328579,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/00-idle.png.import",
+    "bytes": 937,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/01-raise.png",
+    "bytes": 1376331,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/01-raise.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/02-prepare.png",
+    "bytes": 1375397,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/02-prepare.png.import",
+    "bytes": 946,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/03-windup.png",
+    "bytes": 1445668,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/03-windup.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/04-extend.png",
+    "bytes": 1454177,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/04-extend.png.import",
+    "bytes": 941,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/05-release.png",
+    "bytes": 1436150,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/05-release.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/06-lower.png",
+    "bytes": 1461050,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/06-lower.png.import",
+    "bytes": 940,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/06b-return.png",
+    "bytes": 1459044,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/06b-return.png.import",
+    "bytes": 945,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/07-relax.png",
+    "bytes": 1386746,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/07-relax.png.import",
+    "bytes": 939,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/08-settle.png",
+    "bytes": 1391151,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/08-settle.png.import",
+    "bytes": 943,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/09-blink.png",
+    "bytes": 1560678,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/A/09-blink.png.import",
+    "bytes": 939,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/FX/gandr-impact.png",
+    "bytes": 948365,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/FX/gandr-impact.png.import",
+    "bytes": 953,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/FX/gandr-projectile.png",
+    "bytes": 531311,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  },
+  {
+    "path": "godot/workshop-beta-core-ui-20261011-01/Rin2D/art/FX/gandr-projectile.png.import",
+    "bytes": 965,
+    "provision": "original local project/private backup or legally obtained source assets; rights are retained by original owners"
+  }
+]

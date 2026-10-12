@@ -1,0 +1,100 @@
+"""Build additive semantic indexes, keeping ROM identities distinct from sidecar keys."""
+from fuc_semantic_parse import *
+def j(v):return json.dumps(v,ensure_ascii=False,separators=(',',':'))
+def main():
+    semantic_frozen();SM.mkdir(exist_ok=True);chars=readjson(SW/'Parsed/CHARACTER_COMMANDS.json');ui=readjson(SW/'Parsed/MOVE_UI_TEXT.json');assets=readrows(EU/'Metadata/ASSETS.csv');by_path=collections.defaultdict(list)
+    for r in assets:
+        if r['asset_kind']=='fpk_payload':by_path[r['source_logical_path']].append(r)
+    def asset(name):
+        a=by_path.get(name,[])
+        if not a:return ''
+        own=[r for r in a if '/fpack/'+name.rsplit('/',1)[0]+'/'+name.rsplit('/',1)[1].split('.')[0]+'.fpk' in r['source_container']]
+        return (own or a)[0]['asset_id']
+    animation=readrows(EU/'Metadata/ANIMATION_INDEX.csv')
+    def clip_asset(code,n):
+        a=[r for r in animation if r['source_name']==f'chr/{code}/0000.mot' and int(r['motion_table_index'])==n and r['source_container'].endswith(f'/chr/{code}/0000.fpk')];assert len(a)==1,(code,n,len(a));return a[0]['asset_id']
+    anchors=[];failed=[];bycode={c['internal_code']:c for c in chars}
+    for p in sorted((SW/'Anchors').glob('*/ANCHOR.json')):
+        a=readjson(p)
+        if 'state_id' not in a:failed.append(str(p));continue
+        code=a['model_path'].split('/')[1];cr=bycode[code];_,b=payload(f'chr/{code}/0000.seq');o=a['source_file_offset']-4
+        assert u(b,o)==0x0e270519 and a['registers']['a1']==a['state_id'] and a['character_id']==cr['character_id']
+        if a.get('command_fields'):
+            table=int(a['command_fields']['0x1584'],16)-int(a['source_base'],16)+32;assert table==cr['assignments']['0x3e8']['table_offset']
+        a.update(evidence=str(p),code=code,selector_instruction_offset=o);anchors.append(a)
+    returns={a['code']:a for a in anchors if a.get('selector_return')}
+    assert set(returns)=={'lan','sir','rin'}
+    for c,a in returns.items():
+        r=a['selector_return'];assert r['bank_index']==0 and len(r['source_matches'])==1 and r['source_matches'][0]['name']==f'chr/{c}/0000.mot'
+    groups=collections.defaultdict(list)
+    for r in ui['texts']:
+        if r['key'].endswith('_waza'):groups[r['key'][:3]].append(r)
+    char_rows=[];code_rows=[];commands=[];moves={};names=[];anims=[];graph=[];effect=[];sounds=[];texts=[];conflicts=[]
+    fields=['character_id','character_code','move_id','move_internal_index','display_name','display_name_asset','display_name_offset','command_id','command_text','mot_bank','mot_clip','fan','amo','seq','effect_id','effect_asset','sound_id','audio_asset','voice_id','voice_asset','category','flags','semantic_status','evidence','identity_kind','state_number','name_mapping_status','notes']
+    def state(code,n,status,ev):
+        key=f'{code}:state:{n}'
+        if key not in moves:moves[key]={**dict.fromkeys(fields,''),**dict(character_id=bycode[code]['character_id'],character_code=code,move_id=key,move_internal_index=n,state_number=n,seq=asset(f'chr/{code}/0000.seq'),identity_kind='ROM_battle_state',semantic_status=status,evidence=ev,notes='Qualified sidecar key; state number is a ROM integer. Not an invented player-visible Move ID.')}
+        if status=='confirmed_runtime':moves[key].update(semantic_status=status,evidence=ev)
+        return moves[key]
+    def edge(move,rel,target,status,ev,**extra):graph.append(dict(move_id=move,relation_type=rel,target_asset_id=target if str(target).startswith('FSN') else '',target_id=target,status=status,evidence=ev,**extra))
+    for c in chars:
+        code=c['internal_code'];seen=code in returns;disp={'lan':'Lancer','sir':'Shiro','rin':'Rin'}.get(code,c['internal_name']);source='actual_game_UI_and_runtime' if seen else 'ELF_internal_name_not_select_display';ev=f"ELF code array 0x089BA55C / name array 0x089BA670; indexed getters 0x088588F0 / 0x0885A1C8; index {c['character_id']}"
+        if seen:ev+='; '+str(SW/'UI'/({'lan':'lancer_select.jpg','sir':'shiro_select.jpg','rin':'rin_select_confirmed.jpg'}[code]))+'; '+returns[code]['evidence']
+        char_rows.append(dict(character_id=c['character_id'],internal_code=code,display_name=disp,display_name_source=source,body_model_asset=asset(f'chr/{code}/0000.gmo'),body_model_status='confirmed_runtime' if seen else 'candidate_path_membership',mot_bank=0 if seen else '',mot_asset=asset(f'chr/{code}/0000.mot'),fan_set=j([r['asset_id'] for r in assets if r['source_logical_path'].startswith('chr/'+code+'/') and r['extension']=='.fan']),amo_set=j([r['asset_id'] for r in assets if r['source_logical_path'].startswith('chr/'+code+'/') and r['extension']=='.amo']),voice_bank='',select_portrait='',status='confirmed_runtime' if seen else 'confirmed_string_reference',evidence=ev,playable_status='observed_practice_select' if seen else 'unknown',resource_sets_status='path_membership_only'))
+        code_rows.append(dict(character_id=c['character_id'],internal_code=code,display_name=disp,internal_name=c['internal_name'],display_name_source=source,status='confirmed',evidence=ev,scope='UI identity confirmed' if seen else 'internal code/name indexed-table identity; player-visible label not established'))
+        for nr in c.get('normal_commands',[]):
+            key=f'{code}:normal_table:{nr["source_offset"]:x}';s=state(code,nr['state_id'],'confirmed_table',f"{c['source']}@0x{nr['source_offset']:x}; ELF 0x08822E90 stride24/result+20")
+            commands.append(dict(command_id=key,character=code,input_raw=j(nr['raw_words']),input_tokens='',display_text='',move_id=s['move_id'],source=c['source'],source_offset=hex(nr['source_offset']),status='confirmed_table',schema='normal_24_byte',conditions=j({k:v for k,v in nr.items() if k not in ('raw_words','state_id','source_offset')}),notes='Table result before later state variants; input-source masks and actor flags preserved; no direction-free label invented'))
+            edge(s['move_id'],'command_table_result',key,'confirmed_table',commands[-1]['source']+'@'+commands[-1]['source_offset'])
+        for p in c.get('command_programs',[]):
+            output=[i['words'][1] for i in p['instructions'] if i['opcode'] in (0,1)];key=f'{code}:predicate:{p["index"]}';ev=f"{c['source']}@0x{p['source_offset']:x}; actor+0x158C pointer table; interpreter 0x08825558 / initialization 0x08825DD0"
+            commands.append(dict(command_id=key,character=code,input_raw=j(p['instructions']),input_tokens='',display_text='',move_id=j([f'{code}:state:{n}' for n in output]),source=c['source'],source_offset=hex(p['source_offset']),status='confirmed_table',schema='conditional_command_program',conditions='Raw predicates, history and dependent-command conditions retained',notes='May emit multiple successive states; no one-to-one assumption; interpretation details in schema JSON'))
+            for n in output:s=state(code,n,'confirmed_table',ev);edge(s['move_id'],'command_program_result',key,'confirmed_table',ev)
+    # Runtime inputs preserve PSP buttons separately from logical attack labels.
+    observed={}
+    for a in anchors:
+        k=(a['code'],a['state_id'],a['button'],a.get('direction'));old=observed.get(k)
+        if not old or a.get('selector_return'):observed[k]=a
+    labels={'triangle':'M ATTACK','square':'L ATTACK','circle':'H ATTACK'}
+    for (code,n,button,direction),a in observed.items():
+        s=state(code,n,'confirmed_runtime',a['evidence']);key=f'{code}:observed:{direction or "neutral"}:{button}:{n}';cmd=(('→ ' if direction=='right' else '')+labels[button]);s.update(command_id=key,command_text=cmd)
+        commands.append(dict(command_id=key,character=code,input_raw=j(dict(button=button,direction=direction,command_fields=a.get('command_fields',{}))),input_tokens=j(([direction.upper()] if direction else [])+[button.upper(),labels[button]]),display_text=cmd,move_id=s['move_id'],source=a['evidence'],source_offset=hex(a['selector_instruction_offset']),status='confirmed_runtime',schema='natural_input_selector_anchor',conditions='Observed facing/ground state; not a universal direction interpretation',notes='Button labels independently observed in game Controller Settings'))
+        edge(s['move_id'],'observed_command',key,'confirmed_runtime',a['evidence']);edge(s['move_id'],'body_model',asset(a['model_path']),'confirmed_runtime',a['evidence'])
+        direct=a.get('selector_return');ev=a['evidence'];status='confirmed_runtime' if direct else 'strong_candidate'
+        s.update(mot_bank=0,mot_clip=n)
+        anims.append(dict(character=code,move_id=s['move_id'],bank=0,clip=n,clip_asset_id=clip_asset(code,n),mot_asset_id=asset(f'chr/{code}/0000.mot'),mapping_status=status,selector_status='confirmed_runtime',bank_resolution='actual return and complete bank offset-table fingerprint' if direct else 'same model/code bank identified in another anchor; this selector return not captured',evidence=ev))
+        edge(s['move_id'],'animation_clip',clip_asset(code,n),status,ev)
+    # UI records are player-visible entries. Their sidecar keys do not assert a ROM Move ID.
+    uiasset=asset('2d/game/0000.seq');ui_moves=[]
+    for code,records in groups.items():
+        assert len(records)%2==0
+        for i in range(0,len(records),2):
+            name,command=records[i:i+2];uiid=f'{code}:ui:{name["record_offset"]:x}';known=i==0 and code in ('lan','sir','rin');n={'lan':155,'sir':155,'rin':159}.get(code) if known else None;mid=f'{code}:state:{n}' if known else uiid
+            if known:
+                s=moves[mid];s.update(display_name=name['text'],display_name_asset=uiasset,display_name_offset=hex(name['text_offset']),name_mapping_status='confirmed_ui',category='Unique Move',evidence=s['evidence']+'; '+str(SW/f'UI/{"shiro" if code=="sir" else "lancer" if code=="lan" else "rin"}_move_list_01.jpg'))
+            else:
+                s={**dict.fromkeys(fields,''),**dict(character_id=bycode[code]['character_id'],character_code=code,move_id=mid,display_name=name['text'],display_name_asset=uiasset,display_name_offset=hex(name['text_offset']),command_id=uiid+':command',command_text=command['text'],identity_kind='UI_entry_unbound_to_state',semantic_status='confirmed_string_reference',name_mapping_status='state_binding_unknown',evidence=ui['source']['physical_path']+'@'+hex(name['record_offset']),notes='Original game glyph text; unknown glyph tokens retained; source UI entry is not a confirmed animation/state association.')};moves[mid]=s
+            names.append(dict(move_id=mid,ui_entry_id=uiid,character=code,language='Europe_English',display_name=name['text'],source_asset=uiasset,source_offset=hex(name['text_offset']),record_offset=hex(name['record_offset']),string_encoding='FUC_u16LE_glyph_IDs_length_authoritative',raw_glyph_ids=j(name['glyph_ids']),status='confirmed_ui' if known else 'confirmed_string_reference',state_binding_status='confirmed_runtime_ui' if known else 'unknown',glyph_decode_status='complete_supported_glyphs' if not name['unknown_glyphs'] else 'partial_unknown_glyphs',category='Unique Move' if known else ''))
+            commands.append(dict(command_id=uiid+':command',character=code,input_raw=j(command['glyph_ids']),input_tokens=j([dict(glyph=x,token=glyph.get(x,'unknown')) for x in command['glyph_ids']]),display_text=command['text'],move_id=mid,source=ui['source']['physical_path'],source_offset=hex(command['text_offset']),status='confirmed_ui' if known else 'confirmed_string_reference',schema='UI_glyph_tokens',conditions='',notes='UI text preserved without keyboard substitution; logical attack icons distinct from PSP buttons'))
+            edge(mid,'UI_name',uiasset,names[-1]['status'],names[-1]['source_offset']);edge(mid,'UI_command',uiid+':command',commands[-1]['status'],commands[-1]['source_offset']);ui_moves.append(dict(code=code,ui_entry_id=uiid,move_id=mid,name=name['text'],command=command['text'],name_offset=name['text_offset'],command_offset=command['text_offset'],raw_name_glyphs=name['glyph_ids'],raw_command_glyphs=command['glyph_ids'],state_binding='confirmed_runtime_ui' if known else 'unknown'))
+    # Frozen replay supplies downstream relationships; no new low-level interpretation.
+    ev=str(EU/'Metadata/BattleReplay/FUC_LAN_CLIP145_REPLAY_MANIFEST.json');mid='lan:state:145';s=moves[mid];s.update(effect_asset='FSN248817',effect_id='eft/chr/lan/1000.seq',sound_id=j(['0x232C','0x232D','0x232E']),audio_asset='FSN260985',voice_id='0x232D',voice_asset='FSN260985',category='',notes=s['notes']+' Natural M ATTACK action. No standalone move-list name established. Voice dialogue unknown. Only the observed Episode is linked, no exclusive move ownership claim.')
+    effect.append(dict(character='lan',move_id=mid,seq_asset_id='FSN248810',effect_asset_id='FSN248817',seq='eft/chr/lan/1000.seq',effect='eft/chr/lan/1002.gmo',status='confirmed_runtime',evidence=ev,scope='Observed same Episode; not exclusive ownership or all conditional outcomes'))
+    sounds.append(dict(character='lan',move_id=mid,sound_pool=j(['0x232C','0x232D','0x232E']),selection_rule='Random candidate pool; same-Episode captured index1; probability distribution not inferred',observed_values=j(['0x232D']),audio_asset='FSN260985',classification='Voice',classification_status='prior_confirmed_single_sample_only_0x232D',pool_storage='character_SEQ',pool_source_asset=asset('chr/lan/0000.seq'),pool_source_offset='0x3257C',pool_exclusive_to_move='unknown',request_status='confirmed_runtime',alternative_payload_status='unknown',evidence=str(W/'fuc/BattleReplay/Episode08/AUDIO_CHAIN.json')+'; '+str(EU/'Metadata/BattleGeneralization/FUC_AUDIO_CLASSIFICATION_SCOPE.json'),notes='Three IDs retained; only observed ID has causal payload evidence. snd/se path is not used to classify SE. Unknown dialogue.'))
+    for rel,target in [('weapon','FSN248770'),('effect_sequence','FSN248810'),('effect_model','FSN248817'),('observed_voice_payload','FSN260985')]:edge(mid,rel,target,'confirmed_runtime',ev)
+    for sid in ('0x232C','0x232D','0x232E'):edge(mid,'sound_pool_candidate',sid,'confirmed_runtime',sounds[-1]['evidence'],observed=sid=='0x232D')
+    # Supplemental texts use the identical bounded record schema, without invented move links.
+    supplements=['2d/game/1000.seq']+[f'2d/game/chr/{c}/1000.seq' for c in groups]+[f'2d/game/chr/{c}/0000.seq' for c in groups]
+    for logical in supplements:
+        try:sr,raw=payload(logical)
+        except AssertionError:continue
+        for t in text_records(raw):texts.append(dict(character=logical.split('/')[3] if '/chr/' in logical else '',move_id='',text_key=t['key'],original_text=t['text'],language='Europe_English',source_asset=asset(logical),source=sr['physical_path'],source_offset=hex(t['text_offset']),raw_glyph_ids=j(t['glyph_ids']),source_role='mission_UI_source' if logical.endswith('/1000.seq') and '/chr/' in logical else 'win_message_UI_source' if '/chr/' in logical else 'tutorial_UI_source',status='confirmed_string_reference',move_binding_status='unknown',glyph_decode_status='complete_supported_glyphs' if not t['unknown_glyphs'] else 'partial_unknown_glyphs'))
+    conflicts.extend([dict(subject='UI/rin_select.jpg',evidence_a='filename Rin',evidence_b='Actual screenshot says Bazett',reason='Early navigation screenshot was mislabelled; rejected for Rin identity',resolution_status='resolved',resolution='Use rin_select_confirmed.jpg and ID10/code rin runtime anchors'),dict(subject='clip145 name',evidence_a='M ATTACK input / state145',evidence_b='No standalone move-list name',reason='A normal action need not have a named player-visible special entry',resolution_status='not_a_conflict',resolution='display_name blank; retain logical attack label separately'),dict(subject='direction+H state variant',evidence_a='basic input-table result146',evidence_b='runtime lan/sir155, rin159',reason='Post-match state variants; raw matcher output is not necessarily final state',resolution_status='represented_not_flattened',resolution='Distinct table-result and observed-state relations; full variant branching not decoded')])
+    for p in failed:conflicts.append(dict(subject=p,evidence_a='selector probe attempted',evidence_b='No valid battle actor/model identity',reason='Initial wrong model lookup or transition/UI selector',resolution_status='rejected_probe',resolution='Retained in WORK; excluded from confirmed indexes'))
+    for file,rows,cols in [('FUC_CHARACTER_SEMANTIC_INDEX',char_rows,None),('FUC_CHARACTER_CODE_MAP',code_rows,None),('FUC_MOVE_INDEX',list(moves.values()),fields),('FUC_COMMAND_INDEX',commands,None),('FUC_MOVE_ANIMATION_MAP',anims,None),('FUC_MOVE_EFFECT_MAP',effect,None),('FUC_MOVE_SOUND_MAP',sounds,None),('FUC_MOVE_NAME_INDEX',names,None),('FUC_MOVE_TEXT_REFERENCES',texts,None),('FUC_MOVE_RESOURCE_GRAPH',graph,None),('FUC_SEMANTIC_CONFLICTS',conflicts,None)]:
+        cols=cols or list(dict.fromkeys(k for r in rows for k in r));csvwrite(SM/(file+'.csv'),rows,cols)
+    jsonwrite(SM/'FUC_UI_MOVE_ENTRIES.json',ui_moves);jsonwrite(SM/'FUC_CHARACTER_COMMAND_PROGRAMS.json',chars)
+    jsonwrite(SM/'FUC_SEMANTIC_SCHEMA.json',dict(identity='Qualified semantic keys are sidecar relationship IDs, never FSN asset IDs; numeric state != universal named Move ID',normal_table=dict(reader='0x08822E90',stride=24,sentinel='signed int16 -1',fields=['int16 input-source selector','uint16 eligibility passed to0x08827A6C','u32 direction-any mask at+4','u32 all-required input bits at+8','u32 actor+1E0 any-required mask at+12','u32 actor+1E0 excluded mask at+16','u32 matcher state result at+20'],state_variant='may change after input match'),conditional_table=dict(initializer='0x08825DD0',interpreter='0x08825558',pointer='actor+0x158C',working_slots='actor+0x1590 + 28*index, max72',state_emit_ops=[0,1],reset_op=24,unknown='Raw condition programs retained; not all timing/history semantics named'),text_record=dict(magic='0x20061106',header=56,length_field=40,offset_field=44,encoding='little-endian u16 glyph IDs',zero_glyph='space, not text termination',glyph_basis='Existing font/1000.ttd atlas plus actual game UI letters/icons. Unmapped IDs remain explicit glyph tokens.'),selector=dict(dispatch='0x08998CD4 sub5',call='0x08886410',return_address='0x08998ECC',source_instruction='0x0E270519 at chr/<code>/0000.seq+0x3074',state='thread+0x38',bank_rule='first successful loaded bank, actual return index captured for3 anchors',bank_normalization='reuse pre-existing offset-table fingerprint procedure')))
+    stats=dict(created_at=now(),roster_internal_identities=len(chars),runtime_UI_characters=['lan','sir','rin'],normal_command_rows=sum(len(c.get('normal_commands',[])) for c in chars),conditional_programs=sum(len(c.get('command_programs',[])) for c in chars),command_schema_characters=sum(bool(c.get('normal_commands')) for c in chars),conditional_schema_characters=sum(bool(c.get('command_programs')) for c in chars),move_rows=len(moves),ROM_state_rows=sum(m['identity_kind']=='ROM_battle_state' for m in moves.values()),UI_entries=len(names),UI_named_state_bindings=3,unbound_UI_entries=len(names)-3,command_rows=len(commands),runtime_input_state_pairs=len(observed),selector_return_bank_confirmed_pairs=sum(r['mapping_status']=='confirmed_runtime' for r in anims),animation_source_candidates=sum(r['mapping_status']=='strong_candidate' for r in anims),resource_graph_edges=len(graph),supplemental_text_records=len(texts),text_unknown_glyph_ids=sorted({g for t in ui['texts'] for g in t['unknown_glyphs']}),successful_selector_samples=len(anchors),rejected_selector_samples=len(failed),complete_episode_semantic_chain='lan:state:145',new_asset_ids=0,core_catalog_writes=0,low_level_runtime='CLOSED FOR MOD DEVELOPMENT',source_locale='Europe only; no Japan names or guessed translation',stability=readjson(SW/'STABILITY_FINAL.json'),remaining_breakpoint='Most other UI named entries have no proven final state/clip association; command histories and post-match variants are retained as raw predicates.')
+    jsonwrite(SM/'FUC_SEMANTIC_MAPPING_SUMMARY.json',stats);jsonwrite(SW/'BUILD_SUMMARY.json',stats);print(j(stats))
+if __name__=='__main__':main()

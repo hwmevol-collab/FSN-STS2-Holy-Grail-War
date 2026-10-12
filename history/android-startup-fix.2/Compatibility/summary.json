@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-10-08",
+  "status": "RIN_ARCHER_VANILLA_COMPATIBILITY_MATRIX_E1_AMENDED_PASS",
+  "matrixRevision": "E1_MATRIX_AMENDMENT_04",
+  "supersedesMatrixSignature": "660F7A7934D38643C80795F772CC1662627E9BDB01B1CF2E75A14696BF5828AD",
+  "matrixSignatureReference": "Compatibility/matrix-signature.json",
+  "baseline": {
+    "status": "D2_BASELINE_PASS",
+    "version": "0.5.1",
+    "dllSha256": "2648B1CD8B5FD49CE1B9D003817C9626E32A5DA53C68E8FEFC7850D564C11D70",
+    "HUMAN_QA_PENDING": 0,
+    "physicalController": "PHYSICAL_CONTROLLER_QA_DEFERRED_TO_WORKSHOP_RC"
+  },
+  "game": {
+    "commit": "59260271",
+    "version": "v0.107.1",
+    "date": "2026-06-18T15:43:56-07:00",
+    "branch": "v0.107.1",
+    "main_assembly_hash": -1555940892,
+    "steamBuildId": "23811903",
+    "steamManifestSource": "E:\\SteamLibrary\\steamapps\\appmanifest_2868840.acf",
+    "assemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+    "assemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+    "path": "E:\\SteamLibrary\\steamapps\\common\\Slay the Spire 2",
+    "BaseLib": {
+      "version": "v3.4.7",
+      "dllSha256": "55863CA6ADC30A61A7544874E157A519FFE148CCF2B18025947609C4BFF813CE"
+    },
+    "RitsuLib": {
+      "version": "0.6.6",
+      "compatTarget": "0.107.1",
+      "shimSha256": "C90C43AB1654C3EA52BD13B25C0FA080A5F75B6DA3B550001E5E627810A3F422",
+      "runtimeSha256": "F20BD6E333A490CC371B817DD19D2C0F47123D0FD45368CAE61187A89745E755"
+    }
+  },
+  "enumeration": {
+    "source": "Actual installed assemblies in isolated native Godot headless process; fresh full ilspy decompilation of the same SHA-256 assembly",
+    "apis": [
+      "ModelDb.AllAbstractModelSubtypes + private Get(Type)",
+      "ModelDb.AllRelics / AllPotions / AllEvents / AllAncients",
+      "AllRelicPools/AllPotionPools: All + GetUnlocked(UnlockState.all/none)",
+      "ModelDb.AllCharacters: pools and StartingRelics",
+      "ModelDb.Acts: AllEvents/AllAncients/AllEncounters",
+      "AncientEventModel.AllPossibleOptions: actual relic and CharacterId variants",
+      "RoomType / MapPointType / CombatRoomMode + concrete AbstractRoom subtypes"
+    ],
+    "nativeProcessProfiles": "Only isolated RinArcherE1Registry-20261008 profile; installed mods/normal save profiles untouched",
+    "registryErrors": 0,
+    "localizationGaps": [
+      "DeprecatedAncientEvent title: Key=DEPRECATED_ANCIENT_EVENT.title not found in table=ancients"
+    ],
+    "pureExportSha256": "3CBDEE168D20CC44362507256AC31145579A80410EA444C54367006FEC89F44B",
+    "modLoadedExportSha256": "BD241BD78043AB0C41AB41E40A1D80289AF651F9F8F943A0EC33D66779B8B880"
+  },
+  "counts": {
+    "relics": {
+      "total": 297,
+      "NATIVE_SAFE": 21,
+      "GENERIC_ADAPTER": 140,
+      "CUSTOM_ADAPTER": 99,
+      "FILTERED_PUBLIC_ALPHA": 37,
+      "UNKNOWN": 0,
+      "normalRunObtainable": 296,
+      "effectRows": 654
+    },
+    "potions": {
+      "total": 65,
+      "NATIVE_SAFE": 11,
+      "GENERIC_ADAPTER": 25,
+      "CUSTOM_ADAPTER": 20,
+      "FILTERED_PUBLIC_ALPHA": 9,
+      "UNKNOWN": 0,
+      "normalRunObtainable": 63,
+      "effectRows": 200
+    },
+    "events": {
+      "total": 69,
+      "NATIVE_SAFE": 0,
+      "GENERIC_ADAPTER": 2,
+      "CUSTOM_ADAPTER": 58,
+      "FILTERED_PUBLIC_ALPHA": 9,
+      "UNKNOWN": 0,
+      "normalRunObtainable": 66,
+      "effectRows": 354
+    },
+    "rooms": {
+      "total": 18,
+      "NATIVE_SAFE": 0,
+      "GENERIC_ADAPTER": 8,
+      "CUSTOM_ADAPTER": 7,
+      "FILTERED_PUBLIC_ALPHA": 3,
+      "UNKNOWN": 0,
+      "normalRunReachable": 17,
+      "effectRows": 0
+    }
+  },
+  "adapterFamilies": {
+    "ActiveCharacterEffectResolver": {
+      "genericEffectCount": 110,
+      "contentCount": 76,
+      "contentIds": [
+        "POTION.ASHWATER",
+        "POTION.ATTACK_POTION",
+        "POTION.BLESSING_OF_THE_FORGE",
+        "POTION.BOTTLED_POTENTIAL",
+        "POTION.CLARITY",
+        "POTION.COLORLESS_POTION",
+        "POTION.COSMIC_CONCOCTION",
+        "POTION.CURE_ALL",
+        "POTION.DROPLET_OF_PRECOGNITION",
+        "POTION.GAMBLERS_BREW",
+        "POTION.GLOWWATER_POTION",
+        "POTION.LIQUID_MEMORIES",
+        "POTION.OROBIC_ACID",
+        "POTION.POWER_POTION",
+        "POTION.SKILL_POTION",
+        "POTION.SNECKO_OIL",
+        "POTION.SWIFT_POTION",
+        "POTION.TOUCH_OF_INSANITY",
+        "RELIC.AKABEKO",
+        "RELIC.ANCHOR",
+        "RELIC.BAG_OF_PREPARATION",
+        "RELIC.BELLOWS",
+        "RELIC.BIG_MUSHROOM",
+        "RELIC.BONE_TEA",
+        "RELIC.BOOKMARK",
+        "RELIC.BOOMING_CONCH",
+        "RELIC.BRIMSTONE",
+        "RELIC.BRONZE_SCALES",
+        "RELIC.CAPTAINS_WHEEL",
+        "RELIC.CENTENNIAL_PUZZLE",
+        "RELIC.CLOAK_CLASP",
+        "RELIC.CROSSBOW",
+        "RELIC.DATA_DISK",
+        "RELIC.DIAMOND_DIADEM",
+        "RELIC.EMBER_TEA",
+        "RELIC.FAKE_ANCHOR",
+        "RELIC.FAKE_ORICHALCUM",
+        "RELIC.FIDDLE",
+        "RELIC.FRAGRANT_MUSHROOM",
+        "RELIC.GAMBLING_CHIP",
+        "RELIC.GAME_PIECE",
+        "RELIC.GIRYA",
+        "RELIC.GORGET",
+        "RELIC.GREMLIN_HORN",
+        "RELIC.HORN_CLEAT",
+        "RELIC.IRON_CLUB",
+        "RELIC.JEWELED_MASK",
+        "RELIC.JOSS_PAPER",
+        "RELIC.MUMMIFIED_HAND",
+        "RELIC.NINJA_SCROLL",
+        "RELIC.ODDLY_SMOOTH_STONE",
+        "RELIC.ORICHALCUM",
+        "RELIC.PAELS_BLOOD",
+        "RELIC.PARRYING_SHIELD",
+        "RELIC.PENDULUM",
+        "RELIC.POCKETWATCH",
+        "RELIC.POLLINOUS_CORE",
+        "RELIC.POWER_CELL",
+        "RELIC.PRECARIOUS_SHEARS",
+        "RELIC.REPTILE_TRINKET",
+        "RELIC.RINGING_TRIANGLE",
+        "RELIC.RING_OF_THE_DRAKE",
+        "RELIC.RING_OF_THE_SNAKE",
+        "RELIC.RIPPLE_BASIN",
+        "RELIC.ROYAL_POISON",
+        "RELIC.RUNIC_PYRAMID",
+        "RELIC.SAI",
+        "RELIC.SLING_OF_COURAGE",
+        "RELIC.SNECKO_EYE",
+        "RELIC.SPARKLING_ROUGE",
+        "RELIC.SWORD_OF_JADE",
+        "RELIC.THE_ABACUS",
+        "RELIC.TOASTY_MITTENS",
+        "RELIC.UNCEASING_TOP",
+        "RELIC.VAJRA",
+        "RELIC.VEXING_PUZZLEBOX"
+      ]
+    },
+    "CardOwnerEffectResolver": {
+      "genericEffectCount": 73,
+      "contentCount": 53,
+      "contentIds": [
+        "POTION.CUNNING_POTION",
+        "POTION.FYSH_OIL",
+        "POTION.STRENGTH_POTION",
+        "RELIC.AKABEKO",
+        "RELIC.ART_OF_WAR",
+        "RELIC.BRILLIANT_SCARF",
+        "RELIC.BRIMSTONE",
+        "RELIC.CHEMICAL_X",
+        "RELIC.CHOICES_PARADOX",
+        "RELIC.CLAWS",
+        "RELIC.DAUGHTER_OF_THE_WIND",
+        "RELIC.DIAMOND_DIADEM",
+        "RELIC.EMBER_TEA",
+        "RELIC.FAKE_STRIKE_DUMMY",
+        "RELIC.FRESNEL_LENS",
+        "RELIC.FROZEN_EGG",
+        "RELIC.GAMBLING_CHIP",
+        "RELIC.GIRYA",
+        "RELIC.HELICAL_DART",
+        "RELIC.INTIMIDATING_HELMET",
+        "RELIC.JOSS_PAPER",
+        "RELIC.KUNAI",
+        "RELIC.LAVA_LAMP",
+        "RELIC.MINIATURE_CANNON",
+        "RELIC.MOLTEN_EGG",
+        "RELIC.MUMMIFIED_HAND",
+        "RELIC.MUSIC_BOX",
+        "RELIC.MYSTIC_LIGHTER",
+        "RELIC.ORNAMENTAL_FAN",
+        "RELIC.PERMAFROST",
+        "RELIC.POCKETWATCH",
+        "RELIC.RAINBOW_RING",
+        "RELIC.RAZOR_TOOTH",
+        "RELIC.REGALITE",
+        "RELIC.RIPPLE_BASIN",
+        "RELIC.SHURIKEN",
+        "RELIC.SILVER_CRUCIBLE",
+        "RELIC.SLING_OF_COURAGE",
+        "RELIC.SPARKLING_ROUGE",
+        "RELIC.SPIKED_GAUNTLETS",
+        "RELIC.STONE_CRACKER",
+        "RELIC.STRIKE_DUMMY",
+        "RELIC.SWORD_OF_JADE",
+        "RELIC.THROWING_AXE",
+        "RELIC.TOASTY_MITTENS",
+        "RELIC.TOUGH_BANDAGES",
+        "RELIC.TOXIC_EGG",
+        "RELIC.TUNING_FORK",
+        "RELIC.UNSETTLING_LAMP",
+        "RELIC.VAJRA",
+        "RELIC.VAMBRACE",
+        "RELIC.VELVET_CHOKER",
+        "RELIC.VITRUVIAN_MINION"
+      ]
+    },
+    "ContractEffectResolver": {
+      "genericEffectCount": 119,
+      "contentCount": 70,
+      "contentIds": [
+        "MapPointType.Monster",
+        "MapPointType.Treasure",
+        "POTION.CURE_ALL",
+        "POTION.ENERGY_POTION",
+        "POTION.RADIANT_TINCTURE",
+        "RELIC.ART_OF_WAR",
+        "RELIC.BIG_MUSHROOM",
+        "RELIC.BLESSED_ANTLER",
+        "RELIC.BLOOD_SOAKED_ROSE",
+        "RELIC.BOOMING_CONCH",
+        "RELIC.BREAD",
+        "RELIC.BRILLIANT_SCARF",
+        "RELIC.BURNING_STICKS",
+        "RELIC.CANDELABRA",
+        "RELIC.CENTENNIAL_PUZZLE",
+        "RELIC.CHANDELIER",
+        "RELIC.DEMON_TONGUE",
+        "RELIC.DIAMOND_DIADEM",
+        "RELIC.ECTOPLASM",
+        "RELIC.FAKE_HAPPY_FLOWER",
+        "RELIC.FAKE_ORICHALCUM",
+        "RELIC.FAKE_SNECKO_EYE",
+        "RELIC.FAKE_VENERABLE_TEA_SET",
+        "RELIC.GREMLIN_HORN",
+        "RELIC.HAPPY_FLOWER",
+        "RELIC.IVORY_TILE",
+        "RELIC.JOSS_PAPER",
+        "RELIC.KUNAI",
+        "RELIC.KUSARIGAMA",
+        "RELIC.LANTERN",
+        "RELIC.LASTING_CANDY",
+        "RELIC.LAVA_LAMP",
+        "RELIC.LETTER_OPENER",
+        "RELIC.MAW_BANK",
+        "RELIC.MEAT_ON_THE_BONE",
+        "RELIC.MUSIC_BOX",
+        "RELIC.NUNCHAKU",
+        "RELIC.ORICHALCUM",
+        "RELIC.ORNAMENTAL_FAN",
+        "RELIC.PAELS_FLESH",
+        "RELIC.PAELS_TEARS",
+        "RELIC.PANTOGRAPH",
+        "RELIC.PENDULUM",
+        "RELIC.PERMAFROST",
+        "RELIC.PHILOSOPHERS_STONE",
+        "RELIC.POCKETWATCH",
+        "RELIC.POLLINOUS_CORE",
+        "RELIC.PUMPKIN_CANDLE",
+        "RELIC.RAINBOW_RING",
+        "RELIC.RIPPLE_BASIN",
+        "RELIC.RUINED_HELMET",
+        "RELIC.SEAL_OF_GOLD",
+        "RELIC.SHURIKEN",
+        "RELIC.SILVER_CRUCIBLE",
+        "RELIC.SNECKO_EYE",
+        "RELIC.SNECKO_SKULL",
+        "RELIC.SOZU",
+        "RELIC.SPIKED_GAUNTLETS",
+        "RELIC.STONE_CALENDAR",
+        "RELIC.THROWING_AXE",
+        "RELIC.UNSETTLING_LAMP",
+        "RELIC.VAMBRACE",
+        "RELIC.VELVET_CHOKER",
+        "RELIC.VENERABLE_TEA_SET",
+        "RELIC.VERY_HOT_COCOA",
+        "RELIC.WHISPERING_EARRING",
+        "RELIC.WONGOS_MYSTERY_TICKET",
+        "RELIC.YUMMY_COOKIE",
+        "RoomType.Monster",
+        "RoomType.Treasure"
+      ]
+    },
+    "DamageTargetEffectResolver": {
+      "genericEffectCount": 27,
+      "contentCount": 15,
+      "contentIds": [
+        "POTION.GHOST_IN_A_JAR",
+        "POTION.LIQUID_BRONZE",
+        "POTION.LUCKY_TONIC",
+        "RELIC.BRONZE_SCALES",
+        "RELIC.DEMON_TONGUE",
+        "RELIC.DIAMOND_DIADEM",
+        "RELIC.HAND_DRILL",
+        "RELIC.LAVA_LAMP",
+        "RELIC.MEAT_ON_THE_BONE",
+        "RELIC.PAPER_KRANE",
+        "RELIC.PAPER_PHROG",
+        "RELIC.RUINED_HELMET",
+        "RELIC.SELF_FORMING_CLAY",
+        "RELIC.TUNGSTEN_ROD",
+        "RELIC.UNDYING_SIGIL"
+      ]
+    },
+    "DualDeckCardSelector": {
+      "genericEffectCount": 52,
+      "contentCount": 37,
+      "contentIds": [
+        "EVENT.AROMA_OF_CHAOS",
+        "EVENT.DOORS_OF_LIGHT_AND_DARK",
+        "EVENT.SELF_HELP_BOOK",
+        "EVENT.SPIRALING_WHIRLPOOL",
+        "EVENT.SYMBIOTE",
+        "EVENT.WOOD_CARVINGS",
+        "MapPointType.RestSite",
+        "MapPointType.Shop",
+        "RELIC.ASTROLABE",
+        "RELIC.BEAUTIFUL_BRACELET",
+        "RELIC.BIIIG_HUG",
+        "RELIC.CLAWS",
+        "RELIC.DOLLYS_MIRROR",
+        "RELIC.DUSTY_TOME",
+        "RELIC.ELECTRIC_SHRYMP",
+        "RELIC.EMPTY_CAGE",
+        "RELIC.FISHING_ROD",
+        "RELIC.FRAGRANT_MUSHROOM",
+        "RELIC.GNARLED_HAMMER",
+        "RELIC.KIFUDA",
+        "RELIC.NEOWS_TALISMAN",
+        "RELIC.NEW_LEAF",
+        "RELIC.PAELS_GROWTH",
+        "RELIC.POMANDER",
+        "RELIC.PRECARIOUS_SHEARS",
+        "RELIC.PRECISE_SCISSORS",
+        "RELIC.PRESERVED_FOG",
+        "RELIC.PUNCH_DAGGER",
+        "RELIC.ROYAL_STAMP",
+        "RELIC.SAND_CASTLE",
+        "RELIC.TRI_BOOMERANG",
+        "RELIC.WAR_HAMMER",
+        "RELIC.WAR_PAINT",
+        "RELIC.WHETSTONE",
+        "RELIC.YUMMY_COOKIE",
+        "RoomType.RestSite",
+        "RoomType.Shop"
+      ]
+    },
+    "DualRewardModifierResolver": {
+      "genericEffectCount": 2,
+      "contentCount": 2,
+      "contentIds": [
+        "MapPointType.Monster",
+        "RoomType.Monster"
+      ]
+    },
+    "MemberTargetResolver": {
+      "genericEffectCount": 79,
+      "contentCount": 47,
+      "contentIds": [
+        "EVENT.BYRDONIS_NEST",
+        "EVENT.SPIRALING_WHIRLPOOL",
+        "MapPointType.RestSite",
+        "POTION.BLOCK_POTION",
+        "POTION.BLOOD_POTION",
+        "POTION.DEXTERITY_POTION",
+        "POTION.FLEX_POTION",
+        "POTION.FOCUS_POTION",
+        "POTION.FORTIFIER",
+        "POTION.FRUIT_JUICE",
+        "POTION.FYSH_OIL",
+        "POTION.GHOST_IN_A_JAR",
+        "POTION.GIGANTIFICATION_POTION",
+        "POTION.HEART_OF_IRON",
+        "POTION.LIQUID_BRONZE",
+        "POTION.LUCKY_TONIC",
+        "POTION.MAZALETHS_GIFT",
+        "POTION.REGEN_POTION",
+        "POTION.SHIP_IN_A_BOTTLE",
+        "POTION.SPEED_POTION",
+        "POTION.STRENGTH_POTION",
+        "RELIC.BIG_MUSHROOM",
+        "RELIC.BLACK_BLOOD",
+        "RELIC.BLOOD_VIAL",
+        "RELIC.BOOK_OF_FIVE_RINGS",
+        "RELIC.BOOK_REPAIR_KNIFE",
+        "RELIC.BURNING_BLOOD",
+        "RELIC.CHOSEN_CHEESE",
+        "RELIC.DARKSTONE_PERIAPT",
+        "RELIC.DISTINGUISHED_CAPE",
+        "RELIC.DRAGON_FRUIT",
+        "RELIC.FAKE_BLOOD_VIAL",
+        "RELIC.FAKE_LEES_WAFFLE",
+        "RELIC.FAKE_MANGO",
+        "RELIC.LEAFY_POULTICE",
+        "RELIC.LEES_WAFFLE",
+        "RELIC.LOOMING_FRUIT",
+        "RELIC.MANGO",
+        "RELIC.MEAL_TICKET",
+        "RELIC.MEAT_ON_THE_BONE",
+        "RELIC.NUTRITIOUS_OYSTER",
+        "RELIC.PANTOGRAPH",
+        "RELIC.PEAR",
+        "RELIC.PLANISPHERE",
+        "RELIC.STONE_HUMIDIFIER",
+        "RELIC.STRAWBERRY",
+        "RoomType.RestSite"
+      ]
+    },
+    "PotionEligibilityResolver": {
+      "genericEffectCount": 9,
+      "contentCount": 9,
+      "contentIds": [
+        "MapPointType.Monster",
+        "MapPointType.Shop",
+        "POTION.ENTROPIC_BREW",
+        "RELIC.ALCHEMICAL_COFFER",
+        "RELIC.DELICATE_FROND",
+        "RELIC.PETRIFIED_TOAD",
+        "RELIC.PHIAL_HOLSTER",
+        "RoomType.Monster",
+        "RoomType.Shop"
+      ]
+    },
+    "RelicEligibilityResolver": {
+      "genericEffectCount": 15,
+      "contentCount": 14,
+      "contentIds": [
+        "EVENT.HUNGRY_FOR_MUSHROOMS",
+        "MapPointType.Monster",
+        "MapPointType.RestSite",
+        "MapPointType.Shop",
+        "MapPointType.Treasure",
+        "RELIC.CALLING_BELL",
+        "RELIC.CAULDRON",
+        "RELIC.PAELS_WING",
+        "RELIC.SMALL_CAPSULE",
+        "RELIC.TOY_BOX",
+        "RoomType.Monster",
+        "RoomType.RestSite",
+        "RoomType.Shop",
+        "RoomType.Treasure"
+      ]
+    }
+  },
+  "publicAlphaAllowlistDraft": {
+    "relics": {
+      "ENABLE_AFTER_CUSTOM_ADAPTER": 99,
+      "ENABLE_AFTER_E2_GENERIC": 161,
+      "KEEP_FILTERED_FOR_V0_0_0_0_1": 37
+    },
+    "potions": {
+      "ENABLE_AFTER_CUSTOM_ADAPTER": 20,
+      "ENABLE_AFTER_E2_GENERIC": 36,
+      "KEEP_FILTERED_FOR_V0_0_0_0_1": 9
+    },
+    "events": {
+      "ENABLE_AFTER_CUSTOM_ADAPTER": 58,
+      "ENABLE_AFTER_E2_GENERIC": 2,
+      "KEEP_FILTERED_FOR_V0_0_0_0_1": 9
+    },
+    "rooms": {
+      "ENABLE_AFTER_CUSTOM_ADAPTER": 7,
+      "ENABLE_AFTER_E2_GENERIC": 8,
+      "KEEP_FILTERED_FOR_V0_0_0_0_1": 3
+    }
+  },
+  "gates": {
+    "D2_BASELINE_PASS": true,
+    "REAL_REGISTRY_ENUMERATION_PASS": true,
+    "RELIC_MATRIX_COMPLETE": true,
+    "POTION_MATRIX_COMPLETE": true,
+    "EVENT_MATRIX_COMPLETE": true,
+    "ROOM_MATRIX_COMPLETE": true,
+    "PUBLIC_ALPHA_ALLOWLIST_DRAFT_COMPLETE": true,
+    "VANILLA_REGRESSION_PASS": true,
+    "TARGET_SCOPE_SOURCE_CONSISTENCY_PASS": true,
+    "TRANSITIVE_ELIGIBILITY_CLOSURE_PASS": true,
+    "FIXED_REWARD_DEPENDENCY_PASS": true,
+    "MULTI_TARGET_EFFECT_SPLITTING_PASS": true,
+    "ZERO_UNRESOLVED_MATRIX_CORRECTIONS": true
+  },
+  "UNKNOWN_RELICS": 0,
+  "UNKNOWN_POTIONS": 0,
+  "UNKNOWN_EVENTS": 0,
+  "UNKNOWN_ROOM_TYPES": 0,
+  "DESIGN_DEVIATIONS": 0,
+  "DESIGN_CONTRACT_CONFLICT": 0,
+  "IMPLEMENTATION_BLOCKERS": 0,
+  "E1_CLASSIFICATION_BLOCKER": [],
+  "eligibilityChangesApplied": false,
+  "installedDllChanged": false,
+  "nextMilestoneStarted": false,
+  "humanMatrixReview": "READY_FOR_USER_REVIEW",
+  "validation": {
+    "status": "PASS",
+    "matrixAndProtectionChecks": 6184,
+    "finalOutputChecks": 13,
+    "nativeChecks": {
+      "pureVanilla": 55,
+      "currentD2Loaded": 60
+    },
+    "oldEvidenceReadback": {
+      "A": 85,
+      "B": 58,
+      "highlight": 10,
+      "C": 308,
+      "D1": 63,
+      "D2": 83,
+      "total": 607
+    },
+    "oldGameplayReexecuted": false,
+    "protectedFiles": 22829
+  },
+  "countingNotes": [
+    "Totals include special/unobtainable/deprecated models as separate audited entries; normalRunObtainable records their distinction.",
+    "Room total 18 is 9 RoomType + 9 MapPointType domains; concrete room classes=6, CombatRoomMode=3, never 18 distinct rooms.",
+    "Current build has no Boss rarity or Boss relic pool; Ancient relics/events are recorded separately.",
+    "Tier A means effect semantics native-safe; recommended eligibility is still ENABLE_AFTER_E2_GENERIC, not an E1 production change."
+  ],
+  "E1_MATRIX_CORRECTION_REQUIRED": 0,
+  "amendmentAudit": {
+    "contentCoverage": {
+      "relics": 297,
+      "potions": 65,
+      "events": 69,
+      "rooms": 18
+    },
+    "effectRows": 1208,
+    "primitiveCreatureTargetRows": 239,
+    "dependencyNodes": 1032,
+    "dependencyEdges": 488,
+    "dependencySemantics": {
+      "CONDITIONAL_BRANCH": 337,
+      "INDIRECT_RANDOM_GENERATION": 92,
+      "OPTIONAL_CANDIDATE_POOL": 38,
+      "REQUIRED_FIXED_DEPENDENCY": 21
+    },
+    "negativeFixtures": [
+      "RELIC.BRIMSTONE: original enemy/friendly scope error",
+      "RELIC.PHILOSOPHERS_STONE: original enemy/friendly scope error",
+      "Potion Courier cannot be Generic before fixed Foul Potion ready",
+      "Missing fixed-reward dependency",
+      "Terminal-only random filtering",
+      "Unproven full-budget random generation",
+      "Collapsed multi-command power hook",
+      "Brimstone same hook self/enemy collapsed to one effect row"
+    ],
+    "unresolvedTargetExpressions": [],
+    "unresolvedDependencies": [],
+    "revision": "E1_MATRIX_AMENDMENT_03"
+  },
+  "relicTotal": 297,
+  "relicNativeSafe": 21,
+  "relicGenericAdapter": 140,
+  "relicCustomAdapter": 99,
+  "relicFiltered": 37,
+  "relicUnknown": 0,
+  "potionTotal": 65,
+  "potionNativeSafe": 11,
+  "potionGenericAdapter": 25,
+  "potionCustomAdapter": 20,
+  "potionFiltered": 9,
+  "potionUnknown": 0,
+  "eventTotal": 69,
+  "eventNativeSafe": 0,
+  "eventGenericAdapter": 2,
+  "eventCustomAdapter": 58,
+  "eventFiltered": 9,
+  "eventUnknown": 0,
+  "roomTotal": 18,
+  "roomNativeSafe": 0,
+  "roomGenericAdapter": 8,
+  "roomCustomAdapter": 7,
+  "roomFiltered": 3,
+  "roomUnknown": 0,
+  "relicSources": {
+    "rarityCounts": {
+      "Ancient": 100,
+      "Common": 30,
+      "Event": 35,
+      "None": 2,
+      "Rare": 50,
+      "Shop": 30,
+      "Starter": 10,
+      "Uncommon": 40
+    },
+    "bossRarityOrPool": 0,
+    "randomSharedOrCharacterGrabBagEligible": 150,
+    "pools": [
+      {
+        "poolId": "RELIC_POOL.DEFECT_RELIC_POOL",
+        "allCount": 8,
+        "allUnlockedCount": 8,
+        "noneUnlockedCount": 2
+      },
+      {
+        "poolId": "RELIC_POOL.DEPRECATED_RELIC_POOL",
+        "allCount": 1,
+        "allUnlockedCount": 1,
+        "noneUnlockedCount": 1
+      },
+      {
+        "poolId": "RELIC_POOL.EVENT_RELIC_POOL",
+        "allCount": 140,
+        "allUnlockedCount": 140,
+        "noneUnlockedCount": 140
+      },
+      {
+        "poolId": "RELIC_POOL.FALLBACK_RELIC_POOL",
+        "allCount": 1,
+        "allUnlockedCount": 1,
+        "noneUnlockedCount": 1
+      },
+      {
+        "poolId": "RELIC_POOL.IRONCLAD_RELIC_POOL",
+        "allCount": 8,
+        "allUnlockedCount": 8,
+        "noneUnlockedCount": 2
+      },
+      {
+        "poolId": "RELIC_POOL.NECROBINDER_RELIC_POOL",
+        "allCount": 8,
+        "allUnlockedCount": 8,
+        "noneUnlockedCount": 2
+      },
+      {
+        "poolId": "RELIC_POOL.REGENT_RELIC_POOL",
+        "allCount": 8,
+        "allUnlockedCount": 8,
+        "noneUnlockedCount": 2
+      },
+      {
+        "poolId": "RELIC_POOL.SHARED_RELIC_POOL",
+        "allCount": 118,
+        "allUnlockedCount": 118,
+        "noneUnlockedCount": 103
+      },
+      {
+        "poolId": "RELIC_POOL.SILENT_RELIC_POOL",
+        "allCount": 8,
+        "allUnlockedCount": 8,
+        "noneUnlockedCount": 2
+      }
+    ]
+  },
+  "eventSources": {
+    "AllEvents": 57,
+    "randomEventCandidates": 56,
+    "forcedQuestOnly": 1,
+    "AllAncients": 8,
+    "specialPostFinalBoss": 1,
+    "deprecatedOrMock": 3
+  },
+  "roomDomains": {
+    "RoomType": 9,
+    "MapPointType": 9,
+    "concreteRooms": 6,
+    "CombatRoomMode": 3
+  },
+  "customAdapterEvidence": "reports/MILESTONE_E1_MATRIX_AMENDMENT_03.md",
+  "e2bCustomBridge": {
+    "schemaVersion": 1,
+    "matrixRevision": "E1_MATRIX_AMENDMENT_04",
+    "capability": "E2B_FULL_ACT_ROOM_SPINE",
+    "customReadyIds": [
+      "EVENT.COLOSSAL_FLOWER",
+      "EVENT.JUNGLE_MAZE_ADVENTURE",
+      "EVENT.LOST_WISP",
+      "EVENT.NEOW",
+      "EVENT.TEZCATARA"
+    ],
+    "classificationPolicy": "Five exact IDs retain CUSTOM_ADAPTER; native Act, character, unlock and IsAllowed conditions remain mandatory. Other C/D stay closed.",
+    "eventExhaustion": "Keep native unique-first search and native allowing-repetition fallback. Recheck IsAllowed in one bounded native pool cycle; genuinely empty eligible pool rejects before mutation/RNG. No new repeatability policy.",
+    "scopes": {
+      "JungleMazeAdventure": "native shared gold once; chosen member pays native 18 HP",
+      "ColossalFlower": "native Rin >=19 gate; chosen member pays 5+6+7 HP; native gold 35/75/135 or already-ready PollinousCore",
+      "Neow": "native Owner Rin entry heal; at least two compatible positives and one compatible curse before RNG",
+      "Tezcatara": "native Owner Rin entry heal; one native-compatible reward from each original option pool",
+      "LostWisp": "Native Search 60 +/-15 shared gold once; Claim one native Decay mapped to exactly one selected owned deck plus one native LostWisp relic. Decay preserves unplayable, no upgrades, 2 Unpowered|Move end-turn damage to its frozen owner; absent from normal card/reward/shop pools."
+    },
+    "bossContract": "Three distinct accepted Rare Alpha candidates, explicit mixed Owner, choose 0-1 total; normal DualReward unchanged",
+    "sourceEvidence": [
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/JungleMazeAdventure.cs",
+        "sha256": "06000356AF1201B69C1CE9E4EF1D3506FF96B98665924C64DF6F3820F0DBC944"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/ColossalFlower.cs",
+        "sha256": "BB623A8B816ED8477B2185999AF535B16D08CB31950620EEC255E4AD6B13B6DF"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/Neow.cs",
+        "sha256": "8FDE3BBFB6C36F8F23546A3738ECECF94B3AE6B49C709FDD895C0B611C684000"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/Tezcatara.cs",
+        "sha256": "7370A6A92FEBEC7E0FC403451ABE331A2F696251947469C76DC270AD4CE3BCB2"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Events/LostWisp.cs",
+        "sha256": "DF8684EE5931787ED00B8DD7E57AAF26309254D63177DC62E83EA43F01AC0306"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Cards/Decay.cs",
+        "sha256": "897EDB12E9E1DC06BD21ED0CCCC6BA71D3FFB2284C366F46F97AC42233DD2B3B"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Rooms/RoomSet.cs",
+        "sha256": "9B7694FF48D8F13B7365227442F458676BB545A1BEDF452AEA837093385091CC"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Relics/Gorget.cs",
+        "sha256": "28DB32949FC3678C6818D1738976D766B44602D3B33E016559716B65F49528C0"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Powers/PlatingPower.cs",
+        "sha256": "F8E6F35B5DF38EC5D79234CCC25A8E6E51F65EF01DB10043BE23C5BEE64C377A"
+      },
+      {
+        "path": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Powers/RegenPower.cs",
+        "sha256": "DF12E59B8BFBE3278FCFB4D5E71441B3741468B049BBCC4510664B00D1F1DBE9"
+      }
+    ],
+    "dependencyProviders": {
+      "EVENT.LOST_WISP->CARD.DECAY": {
+        "model": "RinArcherCore.FullActOwnedDecay",
+        "scope": "ONLY native LostWisp Claim",
+        "count": 1,
+        "nativeEffectSource": "reports/milestone-e1/decompiled/MegaCrit.Sts2.Core.Models.Cards/Decay.cs"
+      },
+      "EVENT.LOST_WISP->RELIC.LOST_WISP": {
+        "requires": "existing native eligibility/readiness",
+        "count": 1
+      }
+    },
+    "fixedSourceCustomReadyIds": [
+      "RELIC.GORGET"
+    ],
+    "fixedSourcePolicy": "Gorget stays C. Only native first-run forced Treasure/restore/obtain, one original reward; never random pools or shop. AfterRoomEntered single ACTIVE_AT_TRIGGER 4 Plating, native member shared-turn timers."
+  },
+  "customAdapterSourceSha256": "F9C5D5E0A3DDC84486BCFC19CB17C14692A044820F66F09F513B8F4D8778F703"
+}

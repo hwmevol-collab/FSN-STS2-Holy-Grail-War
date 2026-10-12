@@ -1,0 +1,6 @@
+interface:
+  display_name: "Slay the Spire 2 MOD Development"
+  short_description: "Version-aware STS2 modding and practical lessons"
+  default_prompt: "Use $sts2-modding to develop or debug this Slay the Spire 2 MOD and retain reusable verified lessons."
+policy:
+  allow_implicit_invocation: true

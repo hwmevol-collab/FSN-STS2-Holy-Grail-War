@@ -1,0 +1,89 @@
+{
+  "candidate": "v0.9.4-android-startup-fix.2",
+  "engineering": "PASS_SCOPED_WINDOWS_AND_ANDROID_PATH_SIMULATION",
+  "build": "PASS; 0 warnings; 0 errors",
+  "windows": {
+    "positive": {
+      "status": "PASS",
+      "passed": 67,
+      "path": "runtime-positive\\presentation-results.json"
+    },
+    "negative": {
+      "status": "PASS",
+      "passed": 6,
+      "path": "runtime-negative\\presentation-results.json"
+    }
+  },
+  "dependencies": {
+    "BaseLib": "3.4.7",
+    "RitsuLib": "0.6.7 API 0.107.1"
+  },
+  "androidDevice": "PENDING",
+  "androidDeviceReason": "No ADB device connected; Windows path simulation is not Android/Mono/arm64 acceptance",
+  "humanQA": "PENDING",
+  "archiveSha256": "DD85D909685D27E07327F31B3CDB17B54D8C12D85D870934D4F82FD6BCFB4A51",
+  "dllSha256": "AAC38C7DCCEC17CE3C423D2F195427BF0A86A83D28FD9CD0545454FB7831B385",
+  "sourceChanged": [
+    {
+      "file": "RinArcherCore.csproj",
+      "before": "24E36C711A436CD68FE55ECDB0B2C3A81145EBB40AF6696802F17834A69CF491",
+      "after": "E970F33C7A6C51C8CF28F004D911293E4EAB4629468B694BA790F861908C2193"
+    },
+    {
+      "file": "Compatibility/VanillaCompatibilityRegistry.cs",
+      "before": "7B124D5F22DDE849F78CF9653C42584039E2953AFAFCAA6F51F75EB739B2AC6E",
+      "after": "AEA8D08422491DD6A73E4E62127398F11EDCD7C01865CB92C7814224D794E165"
+    }
+  ],
+  "payloadChanged": [
+    "mods/RinArcherCore/RinArcherCore.dll"
+  ],
+  "packageFiles": 27,
+  "protectedFilesUnchanged": 4837,
+  "matrixChanged": false,
+  "gameplayChanged": false,
+  "fix1Overwritten": false,
+  "workshopUpdated": false,
+  "formalInstallReplaced": false,
+  "fullRun": "NOT_RETESTED_THIS_TASK",
+  "productionStartup": {
+    "status": "PASS_WINDOWS_SCOPED",
+    "scope": "ZIP extracted; only FSN + BaseLib + RitsuLib 0.6.7; no QA companion or AppPaths stand-in; real main menu",
+    "mods": [
+      "BaseLib",
+      "RinArcherCore",
+      "STS2-RitsuLib"
+    ],
+    "dllSha256": "AAC38C7DCCEC17CE3C423D2F195427BF0A86A83D28FD9CD0545454FB7831B385",
+    "signatures": [
+      {
+        "source": "ReleaseInfoManager.Instance.ReleaseInfo",
+        "rawLocation": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\android-startup-compat-20261012-02\\runtime-production\\data_sts2_windows_x86_64\\sts2.dll",
+        "assemblyPath": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\android-startup-compat-20261012-02\\runtime-production\\data_sts2_windows_x86_64\\sts2.dll",
+        "platform": "Windows",
+        "fileMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+        "runtimeMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+        "signature": {
+          "GameVersion": "v0.107.1",
+          "Commit": "59260271",
+          "AssemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+          "AssemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb"
+        }
+      },
+      {
+        "source": "ReleaseInfoManager.Instance.ReleaseInfo",
+        "rawLocation": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\android-startup-compat-20261012-02\\runtime-production\\data_sts2_windows_x86_64\\sts2.dll",
+        "assemblyPath": "E:\\BaiduNetdiskDownload\\FSN\\milestone-a\\reports\\android-startup-compat-20261012-02\\runtime-production\\data_sts2_windows_x86_64\\sts2.dll",
+        "platform": "Windows",
+        "fileMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+        "runtimeMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb",
+        "signature": {
+          "GameVersion": "v0.107.1",
+          "Commit": "59260271",
+          "AssemblySha256": "A1F9E653F1E28E4076558FEE1E60D218619CB7E057B887C6417F62C62C6D7A52",
+          "AssemblyMvid": "97f10687-c306-4798-ab75-8b9f23f34dfb"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://actors/archer.glb" id="1"]
+[ext_resource type="AnimationLibrary" path="res://FSNReboot/archer-authored.tres" id="2"]
+[node name="ArcherAuthoring" type="Node3D"]
+[node name="Archer" parent="." instance=ExtResource("1")]
+[node name="AuthoredActionPlayer" type="AnimationPlayer" parent="Archer"]
+libraries = {&"": ExtResource("2")}

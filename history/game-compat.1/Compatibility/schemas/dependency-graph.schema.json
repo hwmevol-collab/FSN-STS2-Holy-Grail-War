@@ -1,0 +1,100 @@
+{
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "matrixRevision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supersedes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "category"
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sourceId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "targetId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dependencyType": {
+            "type": "string",
+            "minLength": 1
+          },
+          "dependencySemantics": {
+            "enum": [
+              "REQUIRED_FIXED_DEPENDENCY",
+              "OPTIONAL_CANDIDATE_POOL",
+              "INDIRECT_RANDOM_GENERATION",
+              "CONDITIONAL_BRANCH",
+              "REFERENCE_ONLY"
+            ]
+          },
+          "gateStage": {
+            "type": "string",
+            "minLength": 1
+          },
+          "terminalFilteringAllowed": {
+            "const": false
+          },
+          "preserveBudget": {
+            "const": true
+          },
+          "evidence": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "sourceId",
+          "targetId",
+          "dependencyType",
+          "dependencySemantics",
+          "gateStage",
+          "terminalFilteringAllowed",
+          "preserveBudget",
+          "evidence"
+        ]
+      }
+    },
+    "productionChangesApplied": {
+      "const": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "matrixRevision",
+    "supersedes",
+    "nodes",
+    "edges",
+    "productionChangesApplied"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

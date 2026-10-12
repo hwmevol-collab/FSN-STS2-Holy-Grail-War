@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3]
+[ext_resource type="Script" path="res://Rin2D/scenes/rin_a.gd" id="Script"]
+[ext_resource type="Texture2D" path="res://Rin2D/art/A/00-idle.png" id="Idle"]
+[ext_resource type="AnimationLibrary" path="res://Rin2D/scenes/rin_a_animation.tres" id="Timeline"]
+[ext_resource type="Shader" path="res://Rin2D/shaders/character.gdshader" id="Shader"]
+[sub_resource type="ShaderMaterial" id="Material"]
+shader = ExtResource("Shader")
+[node name="RinA" type="Node2D"]
+script = ExtResource("Script")
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("Idle")
+centered = false
+position = Vector2(-570,-1470)
+material = SubResource("Material")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {&"": ExtResource("Timeline")}
+autoplay = "idle"

@@ -1,0 +1,104 @@
+{
+  "E2C": "NOT_STARTED",
+  "actualFullRouteCompleted": false,
+  "blockers": [],
+  "candidateDllSha256": "0BBB5A1FBC4E7C6BD95C339D6870C33DDBC0C2A364A566B80A66B7FE505BEC5E",
+  "candidateRevision": "RIN_ARCHER_GAMEPLAY_V1_3_CANDIDATE_01",
+  "candidateRuntime": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-manual",
+  "candidateRuntimeBinding": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-manual/binding.json",
+  "cardPoolRevision": "RIN_ARCHER_CARD_POOL_V1_3_90",
+  "compiledSourceReadback": "reports/rin-archer-gameplay-v1.3-20261010-01/build/source-readback.json",
+  "criteria": [
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-directed-final-04/v13-results.json",
+      "id": 1,
+      "name": "90_MODELS_EFFECTS_RESOURCES_LOOPS",
+      "status": "PASS"
+    },
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-rin-final/v13-results.json",
+      "id": 2,
+      "name": "RIN_SOLO_NATIVE_GRAPH",
+      "status": "PASS"
+    },
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-archer-final/v13-results.json",
+      "id": 3,
+      "name": "ARCHER_SOLO_MULTI_ENEMY_NATIVE_GRAPH",
+      "status": "PASS"
+    },
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-continue-final/v13-results.json",
+      "id": 4,
+      "name": "LEGAL_NATIVE_DISK_CONTINUE",
+      "status": "PASS"
+    },
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/manual-runtime-startup.json",
+      "id": 5,
+      "name": "MANUAL_GRAPHICAL_RUNTIME_THREE_MODS",
+      "status": "PASS"
+    },
+    {
+      "detail": "reports/rin-archer-gameplay-v1.3-20261010-01/build/source-readback.json",
+      "id": 6,
+      "name": "FROZEN_BUILD_AND_PROTECTED_PRIOR_STATE",
+      "status": "PASS"
+    }
+  ],
+  "criticalProtection": "reports/rin-archer-gameplay-v1.3-20261010-01/critical-protection.json",
+  "engineeringStatus": "PASS",
+  "formalHumanCloseout": "PENDING",
+  "fullActCompleted": false,
+  "fullHumanRunPassClaimed": false,
+  "gameplayRevision": "RIN_ARCHER_GAMEPLAY_V1_3",
+  "humanQA": "PENDING",
+  "lastVerified": "2026-10-10",
+  "manualRuntimeStartup": "reports/rin-archer-gameplay-v1.3-20261010-01/manual-runtime-startup.json",
+  "matrixRevision": "E1_MATRIX_AMENDMENT_04",
+  "matrixSignature": "F9E003F67C66201A393CCF2080165134979F342B4149FB7A4820F090F68936B8",
+  "milestone": "RIN_ARCHER_GAMEPLAY_V1_3_EXPANSION_01",
+  "modelsImplemented": 90,
+  "newRewardModels": 36,
+  "phaseTiming": "reports/rin-archer-gameplay-v1.3-20261010-01/timing.json",
+  "regression": [
+    {
+      "evidence": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-directed-final-04/v13-results.json",
+      "id": "90_MODELS_EFFECTS_RESOURCES_LOOPS",
+      "passed": 1198,
+      "runtimeBinding": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-directed-final-04/binding.json",
+      "status": "PASS",
+      "total": 1198
+    },
+    {
+      "evidence": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-rin-final/v13-results.json",
+      "id": "RIN_SOLO_NATIVE_GRAPH",
+      "passed": 479,
+      "runtimeBinding": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-rin-final/binding.json",
+      "status": "PASS",
+      "total": 479
+    },
+    {
+      "evidence": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-archer-final/v13-results.json",
+      "id": "ARCHER_SOLO_MULTI_ENEMY_NATIVE_GRAPH",
+      "passed": 114,
+      "runtimeBinding": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-graph-archer-final/binding.json",
+      "status": "PASS",
+      "total": 114
+    },
+    {
+      "evidence": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-continue-final/v13-results.json",
+      "id": "LEGAL_NATIVE_DISK_CONTINUE",
+      "passed": 4,
+      "runtimeBinding": "reports/rin-archer-gameplay-v1.3-20261010-01/runtime-continue-final/binding.json",
+      "status": "PASS",
+      "total": 4
+    }
+  ],
+  "reusedHistoricalEvidence": [
+    "reports/rin-archer-v1.2-human-qa-fix-20261010-01/ENGINEERING_ACCEPTANCE.json",
+    "reports/MILESTONE_E2B_HUMAN_QA_BUGFIX_01.json"
+  ],
+  "status": "PASS",
+  "verificationScope": "90-model/36-new-card directed native effects and owner/upgrade/loops/status/life/numeric tests; controlled non-TestMode native graphical solo/multi-enemy/choice/cancel/turn/Switch/reward/checkpoint/Continue; three-mod manual menu boot; no whole Act, human play, physical-controller, balance or Workshop release acceptance."
+}

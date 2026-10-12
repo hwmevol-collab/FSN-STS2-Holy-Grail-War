@@ -1,0 +1,7 @@
+{
+  "id": "RinArcherCore", "name": "凛 / 弓兵 — Milestone D2 Run Economy",
+  "author": "Murasame", "version": "0.5.1", "min_game_version": "0.107.1",
+  "description": "D2 开发期经济验收：原生休息点 Focus Rest / 双牌组锻造、2+2 商店、共享删牌与存读档。QA_D2_RUN / NOT_PUBLIC_FINAL_RUN；遗物、药水、事件及完整地图等待后续审计。",
+  "has_dll": true, "has_pck": false, "affects_gameplay": true,
+  "dependencies": [{"id":"BaseLib","min_version":"3.4.7"},{"id":"STS2-RitsuLib","min_version":"0.6.6"}]
+}

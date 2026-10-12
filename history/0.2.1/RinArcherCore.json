@@ -1,0 +1,7 @@
+{
+  "id": "RinArcherCore", "name": "凛 / 弓兵 — Milestone B 中文验收",
+  "author": "Murasame", "version": "0.2.1", "min_game_version": "0.107.1",
+  "description": "开发期验收，非正式内容。凛 / 弓兵核心机制、三件投影武器及 QA 契约 / FIELD。",
+  "has_dll": true, "has_pck": false, "affects_gameplay": true,
+  "dependencies": [{"id":"BaseLib","min_version":"3.4.7"},{"id":"STS2-RitsuLib","min_version":"0.6.6"}]
+}

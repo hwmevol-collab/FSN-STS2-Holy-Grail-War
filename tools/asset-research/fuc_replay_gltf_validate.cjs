@@ -1,0 +1,3 @@
+const fs=require('fs');
+const validator=require('E:/FSN_MASTER_ASSET_WORK/fuc/AnimationValidation/Tools/gltf-validator');
+(async()=>{const file='E:/FSN_MASTER_ASSET_LIBRARY/FateUnlimitedCodesPortable_Europe/Converted/BattleScenes/lan_clip145/lan_clip145_battle_pose.glb';const result=await validator.validateBytes(new Uint8Array(fs.readFileSync(file)),{uri:file,maxIssues:1000});fs.writeFileSync('E:/FSN_MASTER_ASSET_WORK/fuc/BattleReplay/GLTF_VALIDATOR_REPORT.json',JSON.stringify({file,validator_version:validator.version(),result},null,2));console.log(JSON.stringify({errors:result.issues.numErrors,warnings:result.issues.numWarnings,infos:result.issues.numInfos}));if(result.issues.numErrors)process.exitCode=1;})().catch(e=>{console.error(e);process.exitCode=1;});

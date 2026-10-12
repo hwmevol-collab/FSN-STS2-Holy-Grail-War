@@ -1,0 +1,7 @@
+{
+  "id": "RinArcherCore", "name": "凛 / 弓兵 — Milestone D1 Run Core",
+  "author": "Murasame", "version": "0.4.0", "min_game_version": "0.107.1",
+  "description": "D1 开发期 Run：native 地图、双 Deck / HP 持久化、双卡奖励与存读档。QA_D1_RUN / NOT_PUBLIC_FINAL_RUN；商店、休息和事件暂不支持。",
+  "has_dll": true, "has_pck": false, "affects_gameplay": true,
+  "dependencies": [{"id":"BaseLib","min_version":"3.4.7"},{"id":"STS2-RitsuLib","min_version":"0.6.6"}]
+}

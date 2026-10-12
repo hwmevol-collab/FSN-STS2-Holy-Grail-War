@@ -1,0 +1,21 @@
+{
+  "id": "RinArcherCore",
+  "name": "FSN Rin / Archer Contract — Public Beta",
+  "author": "Murasame",
+  "version": "0.9.3",
+  "min_game_version": "0.107.1",
+  "description": "Free unofficial Fate fan mod. Master / Servant Contract, 90 playable models, separate decks and shared resources. Gameplay V1.3; Simplified Chinese / English; partial vanilla compatibility.",
+  "has_dll": true,
+  "has_pck": false,
+  "affects_gameplay": true,
+  "dependencies": [
+    {
+      "id": "BaseLib",
+      "min_version": "3.4.7"
+    },
+    {
+      "id": "STS2-RitsuLib",
+      "min_version": "0.6.6"
+    }
+  ]
+}
