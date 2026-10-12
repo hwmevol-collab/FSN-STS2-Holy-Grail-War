@@ -1,135 +1,288 @@
 [
   {
+    "group": "final",
+    "version": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual",
+    "file": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual.zip",
+    "status": "Final Windows beta, tested exact v0.107.1 and v0.111.0 builds. Android unsupported.",
+    "bytes": 44084407,
+    "tag": "v0.9.4-game-compat.1-visual-loader-fix-01-dual",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/v0.9.4-game-compat.1-visual-loader-fix-01-dual",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/v0.9.4-game-compat.1-visual-loader-fix-01-dual/FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual.zip",
+    "sha256": "3CFB3415642CB58E877FA6F94ADCFCD8EF6E9C150D5804B5DEC69C8A834F7CFB",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-legacy-saber",
+    "version": "FateStayNight-v0.1.0",
+    "file": "FateStayNight-v0.1.0-historical-mod-only.zip",
+    "bytes": 8509307,
+    "status": "Separate earlier Saber MOD, historical test package, not Rin/Archer. No current game compatibility guarantee.",
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/FateStayNight-v0.1.0-historical-mod-only.zip",
+    "sha256": "D4B12EABCF2F682C30855376BD5D67BE00B562B808068CB85B8A02B76735803C",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-legacy-saber",
+    "version": "FateStayNight-v0.2.0-local",
+    "file": "FateStayNight-v0.2.0-local-historical-mod-only.zip",
+    "bytes": 14603679,
+    "status": "Separate earlier Saber MOD, historical test package, not Rin/Archer. No current game compatibility guarantee.",
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/FateStayNight-v0.2.0-local-historical-mod-only.zip",
+    "sha256": "31B3B17C6313A2508F5DE13FDF59FB971129B838DD8E8A95795B951C255B9078",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-legacy-saber",
+    "version": "FateStayNight-v0.3.0-local",
+    "file": "FateStayNight-v0.3.0-local-historical-mod-only.zip",
+    "bytes": 26673298,
+    "status": "Separate earlier Saber MOD, historical test package, not Rin/Archer. No current game compatibility guarantee.",
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/FateStayNight-v0.3.0-local-historical-mod-only.zip",
+    "sha256": "BDC8E8DF376FDDD4AC50E0F3D308B451EEDCA1948E3541865145CDA39C364EA8",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
     "group": "archive-milestones-a-d",
     "version": "0.1.0",
     "file": "RinArcherCore-0.1.0-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 43614
+    "bytes": 43614,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.1.0-historical-mod-only.zip",
+    "sha256": "4050A43E32CFE22B2BF21D393CF669C5B36D6B723F10FC8866087983A7BAB7FD",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.2.0",
     "file": "RinArcherCore-0.2.0-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 60954
+    "bytes": 60954,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.2.0-historical-mod-only.zip",
+    "sha256": "0431189E630D6D95DC435F9C88C9A5661E4B4E3361764EEBE7023839C9112C87",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.2.1",
     "file": "RinArcherCore-0.2.1-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 62809
+    "bytes": 62809,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.2.1-historical-mod-only.zip",
+    "sha256": "847F1E711633846D933FDBA3A855A3DC6162DAA3832C5E813363900526486481",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.3.0",
     "file": "RinArcherCore-0.3.0-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 96570
+    "bytes": 96570,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.3.0-historical-mod-only.zip",
+    "sha256": "2DD4D239564417D6584C55369BA9ACF72A299FF2DB084AB629A8B6B27B04073D",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.4.0",
     "file": "RinArcherCore-0.4.0-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 120946
+    "bytes": 120946,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.4.0-historical-mod-only.zip",
+    "sha256": "DFA7B8DB96F4338E5918586EF8E918286FA4297554F9F7734B943487C5951C7D",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.5.0",
     "file": "RinArcherCore-0.5.0-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 153346
+    "bytes": 153346,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.5.0-historical-mod-only.zip",
+    "sha256": "E4909DE0B573239C94A52C8B2756E662848158D75E8EC80A3471F3D307D62BA0",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-milestones-a-d",
     "version": "0.5.1",
     "file": "RinArcherCore-0.5.1-historical-mod-only.zip",
     "status": "Historical test build; dependencies excluded; Windows game identity from corresponding source snapshot; not retested in final closeout",
-    "bytes": 155329
-  },
-  {
-    "group": "archive-compatibility-candidates",
-    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.1",
-    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.1.zip",
-    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
-    "bytes": 43180656
-  },
-  {
-    "group": "archive-compatibility-candidates",
-    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.2",
-    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.2.zip",
-    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
-    "bytes": 43181953
+    "bytes": 155329,
+    "tag": "archive-milestones-a-d-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-milestones-a-d-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-milestones-a-d-20261013/RinArcherCore-0.5.1-historical-mod-only.zip",
+    "sha256": "1D520FC8EE4734BE0C7842F44159C1A02504332C0FFF0100651EC709F083D16E",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-0.9.4-game-compat.1-107",
     "file": "FSN-RinArcher-0.9.4-game-compat.1-107.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 43199484
+    "bytes": 43199484,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-0.9.4-game-compat.1-107.zip",
+    "sha256": "5276EE139B7F9601FE3D811C4D7CDA10ADC2099A60119CF07B6AEBDD2A71A196",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-0.9.4-game-compat.1-111",
     "file": "FSN-RinArcher-0.9.4-game-compat.1-111.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 43201343
+    "bytes": 43201343,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-0.9.4-game-compat.1-111.zip",
+    "sha256": "B39C588B15A063F460F03411A882531435D90F8406B66FE27BD9D90C23F4AC77",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-0.9.4-game-compat.1-dual",
     "file": "FSN-RinArcher-0.9.4-game-compat.1-dual.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 44082341
-  },
-  {
-    "group": "final",
-    "version": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual",
-    "file": "FSN-RinArcher-0.9.4-game-compat.1-visual-loader-fix-01-dual.zip",
-    "status": "Final Windows beta, tested exact v0.107.1 and v0.111.0 builds. Android unsupported.",
-    "bytes": 44084407
-  },
-  {
-    "group": "archive-compatibility-candidates",
-    "version": "FSN-RinArcher-v0.9.4-vanilla-compat.1",
-    "file": "FSN-RinArcher-v0.9.4-vanilla-compat.1.zip",
-    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 43198536
-  },
-  {
-    "group": "archive-compatibility-candidates",
-    "version": "FSN-RinArcher-Public-Beta-v0.9.4",
-    "file": "FSN-RinArcher-Public-Beta-v0.9.4.zip",
-    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 43178763
+    "bytes": 44082341,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-0.9.4-game-compat.1-dual.zip",
+    "sha256": "2D19939230D8CE8C59568340EC88A22D97114849603C94BEF38FA83348BE270B",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-Public-Beta-v0.9.1",
     "file": "FSN-RinArcher-Public-Beta-v0.9.1.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 41261101
+    "bytes": 41261101,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-Public-Beta-v0.9.1.zip",
+    "sha256": "B9EB3DBD4C81390E53B4B762F8BE9875963E42F0C2CCB628D114EC71A3BE140F",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-Public-Beta-v0.9.2",
     "file": "FSN-RinArcher-Public-Beta-v0.9.2.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 41261077
+    "bytes": 41261077,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-Public-Beta-v0.9.2.zip",
+    "sha256": "5E5C638FEF4341B6927CCEC21FA93393C2FEE487B1F15699FE4D95AE775D7AE9",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-Public-Beta-v0.9.3",
     "file": "FSN-RinArcher-Public-Beta-v0.9.3.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 43167943
+    "bytes": 43167943,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-Public-Beta-v0.9.3.zip",
+    "sha256": "53F9A0E74B5E8583FBEF4D09BF384CDD4A65AACB74DA24E3FC6A37F20E1FBD26",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-Public-Beta-v0.9.4",
+    "file": "FSN-RinArcher-Public-Beta-v0.9.4.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43178763,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-Public-Beta-v0.9.4.zip",
+    "sha256": "A5B1A10810DDE62C0F3346580CA01E26C2A817E45318D2B776062E1CD10A2348",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.1",
+    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.1.zip",
+    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
+    "bytes": 43180656,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-v0.9.4-android-startup-fix.1.zip",
+    "sha256": "5DC058877A7DE5E446D0761A0804F598804D6C0DCE9AA705B979600F43CD3C9F",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-android-startup-fix.2",
+    "file": "FSN-RinArcher-v0.9.4-android-startup-fix.2.zip",
+    "status": "Historical Android-related candidate; Android startup faults remained, unsupported and not recommended.",
+    "bytes": 43181953,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-v0.9.4-android-startup-fix.2.zip",
+    "sha256": "DD85D909685D27E07327F31B3CDB17B54D8C12D85D870934D4F82FD6BCFB4A51",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
+  },
+  {
+    "group": "archive-compatibility-candidates",
+    "version": "FSN-RinArcher-v0.9.4-vanilla-compat.1",
+    "file": "FSN-RinArcher-v0.9.4-vanilla-compat.1.zip",
+    "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
+    "bytes": 43198536,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-v0.9.4-vanilla-compat.1.zip",
+    "sha256": "AC739C4FC0ADD198B68EBE2D688D34C52DCE8C26EFE3B19D0ADB14FD208F56EA",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   },
   {
     "group": "archive-compatibility-candidates",
     "version": "FSN-RinArcher-Workshop-Beta-RC01-v0.9.1",
     "file": "FSN-RinArcher-Workshop-Beta-RC01-v0.9.1.zip",
     "status": "Superseded historical beta/fix candidate; not final and not retested in closeout.",
-    "bytes": 41261101
+    "bytes": 41261101,
+    "tag": "archive-compatibility-candidates-20261013",
+    "releaseUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/archive-compatibility-candidates-20261013",
+    "downloadUrl": "https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/download/archive-compatibility-candidates-20261013/FSN-RinArcher-Workshop-Beta-RC01-v0.9.1.zip",
+    "sha256": "B9EB3DBD4C81390E53B4B762F8BE9875963E42F0C2CCB628D114EC71A3BE140F",
+    "publicHead": "PASS",
+    "githubDigestMatched": true
   }
 ]

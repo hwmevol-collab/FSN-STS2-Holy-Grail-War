@@ -7,6 +7,7 @@ An unofficial, completely free Fate/stay night fan MOD. Rin Tohsaka and Archer f
 非官方、完全免费的同人 MOD。当前可玩的是 Rin / Archer 双角色契约，支持凛单核、Archer 单核与协同构筑。其他契约与完整圣杯战争仍未完成。
 
 - Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=3818087982
+- [Final Windows beta](https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases/tag/v0.9.4-game-compat.1-visual-loader-fix-01-dual) · [All Releases](https://github.com/hwmevol-collab/FSN-STS2-Holy-Grail-War/releases)
 - Final candidate: **0.9.4-game-compat.1-visual-loader-fix-01-dual**; internal informational version **0.9.4-game-compat.1**.
 - Windows game builds: **v0.107.1 / 59260271** and **v0.111.0 / 41cef1ea**. Complete SHA-256/MVID identities are in [verified-games.json](verified-games.json). Unknown builds are rejected.
 - Dependencies: **BaseLib 3.4.7**, **RitsuLib 0.6.7 complete multi-version package** (matching compat directories and shared). Game/dependency binaries are not in Git.
